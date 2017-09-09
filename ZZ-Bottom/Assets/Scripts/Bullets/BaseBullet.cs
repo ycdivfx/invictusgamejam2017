@@ -7,6 +7,7 @@ public class BaseBullet : MonoBehaviour
     public float Damage = 1;
     public float DestroyAfter = 2f;
     public float Speed = 10f;
+    public BulletType Type;
     protected float m_startTime;
     protected float m_angle = 0f;
 
@@ -31,7 +32,7 @@ public class BaseBullet : MonoBehaviour
 
     public void DoDamage(Enemy enemy)
     {
-        enemy.Health -= Damage;
+        enemy.Health -= enemy.Multipliers.CalculateDamage(Damage, Type);
         Destroy(gameObject);
     }
 }

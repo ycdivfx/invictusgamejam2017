@@ -22,6 +22,13 @@ public class Powerup : MonoBehaviour
                 OnOutOfShoots.Invoke();
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //collision.gameObject.layer == 
+    }
+
+
 }
 
 public enum BulletType

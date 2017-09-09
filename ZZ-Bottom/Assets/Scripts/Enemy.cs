@@ -15,7 +15,7 @@ public class Enemy : BaseObject
 
     private SpriteRenderer m_spriteRenderer;
     private Animator m_animator;
-    private ContactFilter2D m_bullets;
+    private ContactFilter2D m_bulletsFilter;
 
     public float Health
     {
@@ -50,13 +50,13 @@ public class Enemy : BaseObject
 
     protected override void OnStart()
     {
-        m_bullets.SetLayerMask(PlayerBullets);
-        m_bullets.useLayerMask = true;
+        m_bulletsFilter.SetLayerMask(PlayerBullets);
+        m_bulletsFilter.useLayerMask = true;
     }
 
     protected override void OnFixedUpdate()
     {
-        var collisions = m_rb2D.GetContacts(m_bullets);
+        var collisions = m_rb2D.GetContacts(m_bulletsFilter);
         collisions.ForEach(x => x.collider.gameObject.GetComponent<BaseBullet>().DoDamage(this));
     }
 }
