@@ -43,11 +43,11 @@ public class PlayerController : BaseObject {
         }
 
 
-        bool flipSprite = (m_spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < 0.01f));
-        if (flipSprite)
-        {
-            m_spriteRenderer.flipX = !m_spriteRenderer.flipX;
-        }
+        //bool flipSprite = (m_spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < 0.01f));
+        //if (flipSprite)
+        //{
+        //    m_spriteRenderer.flipX = !m_spriteRenderer.flipX;
+        //}
 
         m_animator.SetBool("grounded", m_grounded);
         m_animator.SetFloat("velocityX", Mathf.Abs(m_velocity.x) / MaxSpeed);
