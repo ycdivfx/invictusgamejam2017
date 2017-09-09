@@ -273,19 +273,19 @@ MonoBehaviour:
   - Probability:
       Min: 0.9
       Max: 1.1
-    Angle: 90
+    Angle: 45
   - Probability:
       Min: 0.8
       Max: 0.9
     Angle: 0
   - Probability:
-      Min: 0.5
+      Min: 0.2
       Max: 0.8
-    Angle: 35
+    Angle: 25
   - Probability:
       Min: -0.1
-      Max: 0.5
-    Angle: 45
+      Max: 0.2
+    Angle: 90
   shotAngle: 0
   index: 0
   closerEnemy: {fileID: 0}

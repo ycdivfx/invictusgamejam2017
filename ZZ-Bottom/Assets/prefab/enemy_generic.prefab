@@ -122,11 +122,11 @@ MonoBehaviour:
   MaxJumps: 2
   Multipliers:
     Normal: 1
-    Gold: 0
-    Silver: 0
-    Bronze: 0
+    Gold: 4
+    Silver: 3
+    Bronze: 2
   m_health: 15
-  Speed: {x: -2, y: 0}
+  Speed: 0
   PlayerBullets:
     serializedVersion: 2
     m_Bits: 4096
@@ -162,7 +162,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 50
   m_Sprite: {fileID: 21300000, guid: 0308d5ba3d4c8fc49b44882cb09d4796, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
