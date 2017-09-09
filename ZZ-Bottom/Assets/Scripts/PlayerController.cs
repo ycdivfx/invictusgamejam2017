@@ -98,7 +98,8 @@ public class PlayerController : BaseObject
 
     protected override void OnUpdate()
     {
-        var isLucky = Math.Abs(m_playerWeapon.CheckLuckyShot().Angle) < float.Epsilon;
+        var stats = m_playerWeapon.CheckLuckyShot();
+        var isLucky = stats != null && Math.Abs(stats.Angle) < float.Epsilon;
         if (m_animator.GetBool("lucky") == isLucky) return;
         m_animator.SetBool("lucky", isLucky);
     }

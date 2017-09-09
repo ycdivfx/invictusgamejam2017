@@ -43,15 +43,15 @@ public class PlayerWeapon : MonoBehaviour
         SoundManager.Instance.PlaySfx(SoundManager.Instance.Shoot);
         shotAngle = 40f;
         index = Random.Range(0, CrazyBulletObject.Count);
-        closerEnemy = FindObjectsOfType<Enemy>().ToList().OrderBy(x => Vector2.Distance(x.transform.position, transform.position)).FirstOrDefault();
+        //closerEnemy = FindObjectsOfType<Enemy>().ToList().OrderBy(x => Vector2.Distance(x.transform.position, transform.position)).FirstOrDefault();
 
 
-        if (closerEnemy != null && closerEnemy.transform.position.x > transform.position.x)
-        {
+        //if (closerEnemy != null && closerEnemy.transform.position.x > transform.position.x)
+        //{
             var stat = CheckLuckyShot();
             if (stat != null)
                 shotAngle = stat.Angle;
-        }
+        //}
         bool isLuckShot = Math.Abs(shotAngle) < float.Epsilon;
 
         if (isLuckShot)
@@ -92,10 +92,15 @@ public class PlayerWeapon : MonoBehaviour
 
     public BulletStats CheckLuckyShot()
     {
-        var enemyDistance = Vector2.Distance(closerEnemy.transform.position - new Vector3(0.5f, 0), transform.position + new Vector3(0.5f, 0));
-        prob = Mathf.Clamp(enemyDistance / SweetDistance, 0f, 1.1f);
-        var stat = Stats.FirstOrDefault(x => x.InRange(prob) == 0);
-        return stat;
+        closerEnemy = FindObjectsOfType<Enemy>().ToList().OrderBy(x => Vector2.Distance(x.transform.position, transform.position)).FirstOrDefault();
+        if (closerEnemy != null && closerEnemy.transform.position.x > transform.position.x)
+        {
+            var enemyDistance = Vector2.Distance(closerEnemy.transform.position - new Vector3(0.5f, 0), transform.position + new Vector3(0.5f, 0));
+            prob = Mathf.Clamp(enemyDistance / SweetDistance, 0f, 1.1f);
+            var stat = Stats.FirstOrDefault(x => x.InRange(prob) == 0);
+            return stat;
+        }
+        return null;
     }
 }
 
