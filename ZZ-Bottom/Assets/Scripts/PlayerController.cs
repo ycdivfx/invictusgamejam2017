@@ -24,17 +24,24 @@ public class PlayerController : BaseObject {
 
         move.x = Input.GetAxis("Horizontal");
 
-        if (Input.GetButtonDown("Jump") && Grounded)
+        if (Input.GetButtonDown("Jump") && m_grounded)
         {
-            Velocity.y = JumpTakeOffSpeed;
+            m_velocity.y = JumpTakeOffSpeed;
+            m_jumps++;
         }
-        else if (Input.GetButtonUp("Jump"))
+        //else if (Input.GetButtonUp("Jump"))
+        //{
+        //    if (m_velocity.y > 0)
+        //    {
+        //        m_velocity.y = m_velocity.y * 0.5f;
+        //    }
+        //}
+        if (Input.GetButtonDown("Jump") && !m_grounded && m_jumps < MaxJumps)
         {
-            if (Velocity.y > 0)
-            {
-                Velocity.y = Velocity.y * 0.5f;
-            }
+            m_velocity.y += JumpTakeOffSpeed;
+            m_jumps++;
         }
+
 
         bool flipSprite = (m_spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < 0.01f));
         if (flipSprite)
@@ -42,9 +49,9 @@ public class PlayerController : BaseObject {
             m_spriteRenderer.flipX = !m_spriteRenderer.flipX;
         }
 
-        m_animator.SetBool("grounded", Grounded);
-        m_animator.SetFloat("velocityX", Mathf.Abs(Velocity.x) / MaxSpeed);
+        m_animator.SetBool("grounded", m_grounded);
+        m_animator.SetFloat("velocityX", Mathf.Abs(m_velocity.x) / MaxSpeed);
 
-        TargetVelocity = move * MaxSpeed;
+        m_targetVelocity = move * MaxSpeed;
     }
 }

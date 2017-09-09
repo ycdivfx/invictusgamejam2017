@@ -6,34 +6,36 @@ public class BaseObject : MonoBehaviour
 {
     public float MinGroundNormalY = .65f;
     public float GravityModifier = 1f;
+    public int MaxJumps = 2;
 
-    protected Vector2 TargetVelocity;
-    protected bool Grounded;
-    protected Vector2 GroundNormal;
-    protected Rigidbody2D Rb2D;
-    protected Vector2 Velocity;
-    protected ContactFilter2D ContactFilter;
-    protected RaycastHit2D[] HitBuffer = new RaycastHit2D[16];
-    protected List<RaycastHit2D> HitBufferList = new List<RaycastHit2D>(16);
+    protected Vector2 m_targetVelocity;
+    protected bool m_grounded;
+    protected Vector2 m_groundNormal;
+    protected Rigidbody2D m_rb2D;
+    protected Vector2 m_velocity;
+    protected ContactFilter2D m_contactFilter;
+    protected RaycastHit2D[] m_hitBuffer = new RaycastHit2D[16];
+    protected List<RaycastHit2D> m_hitBufferList = new List<RaycastHit2D>(16);
+    protected int m_jumps;
 
     protected const float MinMoveDistance = 0.001f;
     protected const float ShellRadius = 0.01f;
 
     private void OnEnable()
     {
-        Rb2D = GetComponent<Rigidbody2D>();
+        m_rb2D = GetComponent<Rigidbody2D>();
     }
 
     private void Start()
     {
-        ContactFilter.useTriggers = false;
-        ContactFilter.SetLayerMask(Physics2D.GetLayerCollisionMask(gameObject.layer));
-        ContactFilter.useLayerMask = true;
+        m_contactFilter.useTriggers = false;
+        m_contactFilter.SetLayerMask(Physics2D.GetLayerCollisionMask(gameObject.layer));
+        m_contactFilter.useLayerMask = true;
     }
 
     private void Update()
     {
-        TargetVelocity = Vector2.zero;
+        m_targetVelocity = Vector2.zero;
         ComputeVelocity();
     }
 
@@ -43,16 +45,16 @@ public class BaseObject : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Velocity += GravityModifier * Physics2D.gravity * Time.deltaTime;
-        Velocity.x = TargetVelocity.x;
+        m_velocity += GravityModifier * Physics2D.gravity * Time.deltaTime;
+        m_velocity.x = m_targetVelocity.x;
 
-        Grounded = false;
+        m_grounded = false;
 
-        Vector2 deltaPosition = Velocity * Time.deltaTime;
+        var deltaPosition = m_velocity * Time.deltaTime;
 
-        Vector2 moveAlongGround = new Vector2(GroundNormal.y, -GroundNormal.x);
+        var moveAlongGround = new Vector2(m_groundNormal.y, -m_groundNormal.x);
 
-        Vector2 move = moveAlongGround * deltaPosition.x;
+        var move = moveAlongGround * deltaPosition.x;
 
         Movement(move, false);
 
@@ -67,37 +69,38 @@ public class BaseObject : MonoBehaviour
 
         if (distance > MinMoveDistance)
         {
-            int count = Rb2D.Cast(move, ContactFilter, HitBuffer, distance + ShellRadius);
-            HitBufferList.Clear();
+            int count = m_rb2D.Cast(move, m_contactFilter, m_hitBuffer, distance + ShellRadius);
+            m_hitBufferList.Clear();
             for (int i = 0; i < count; i++)
             {
-                HitBufferList.Add(HitBuffer[i]);
+                m_hitBufferList.Add(m_hitBuffer[i]);
             }
 
-            for (int i = 0; i < HitBufferList.Count; i++)
+            foreach (var hit2D in m_hitBufferList)
             {
-                Vector2 currentNormal = HitBufferList[i].normal;
+                var currentNormal = hit2D.normal;
                 if (currentNormal.y > MinGroundNormalY)
                 {
-                    Grounded = true;
+                    m_grounded = true;
+                    m_jumps = 0;
                     if (yMovement)
                     {
-                        GroundNormal = currentNormal;
+                        m_groundNormal = currentNormal;
                         currentNormal.x = 0;
                     }
                 }
 
-                float projection = Vector2.Dot(Velocity, currentNormal);
+                var projection = Vector2.Dot(m_velocity, currentNormal);
                 if (projection < 0)
                 {
-                    Velocity = Velocity - projection * currentNormal;
+                    m_velocity = m_velocity - projection * currentNormal;
                 }
 
-                float modifiedDistance = HitBufferList[i].distance - ShellRadius;
+                var modifiedDistance = hit2D.distance - ShellRadius;
                 distance = modifiedDistance < distance ? modifiedDistance : distance;
             }
         }
 
-        Rb2D.position = Rb2D.position + move.normalized * distance;
+        m_rb2D.position = m_rb2D.position + move.normalized * distance;
     }
 }
