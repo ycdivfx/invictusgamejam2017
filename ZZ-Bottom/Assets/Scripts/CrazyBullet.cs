@@ -6,15 +6,14 @@ public class CrazyBullet : BaseBullet
 {
     protected override void OnShoot()
     {
-        GetComponent<Rigidbody2D>().velocity = new Vector2(Speed, Speed / 2);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0, Speed);
     }
 
     private void Update()
     {
-        var deltaTime = (int) ((Time.time - m_startTime) % 0.5f);
-        if (deltaTime == 1)
-        {
-            //GetComponent<Rigidbody2D>().gravityScale =
-        }
+        var deltaTime = (int)((Time.time - m_startTime) % 0.5f);
+        //if (deltaTime != 1)
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0, Speed);
+
     }
 }

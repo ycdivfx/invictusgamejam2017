@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerWeapon : MonoBehaviour
 {
-    public LuckyBullet LuckyBulletObject;
-    public List<CrazyBullet> CrazyBulletObject = new List<CrazyBullet>();
+    public BaseBullet LuckyBullet;
+    public List<BaseBullet> CrazyBulletObject = new List<BaseBullet>();
     public Vector2 BulletStartOffset;
 
     public float SweetDistance;
@@ -22,9 +22,10 @@ public class PlayerWeapon : MonoBehaviour
     private void Shoot()
     {
         var enemies = FindObjectOfType<Enemy>();
-        var bullet = Instantiate(LuckyBulletObject);
+        var bullet = Instantiate(LuckyBullet);
         bullet.transform.position = transform.position + new Vector3(BulletStartOffset.x, BulletStartOffset.y);
         bullet.Shoot();
 
     }
 }
+
