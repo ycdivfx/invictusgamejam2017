@@ -12,13 +12,14 @@ public class Enemy : BaseObject
     public float Speed;
     public LayerMask PlayerBullets;
     public float TimeoutBeforeRemove = 2f;
+    public int Score;
 
     private SpriteRenderer m_spriteRenderer;
     private Animator m_animator;
     private ContactFilter2D m_bulletsFilter;
 
     public float Health
-    {
+    {   
         get { return m_health; }
         set
         {
@@ -28,6 +29,7 @@ public class Enemy : BaseObject
                 SoundManager.Instance.PlaySfx(SoundManager.Instance.DieEnemy);
                 Speed = 0;
                 DestroyObject(gameObject);
+               //GameManager.Instance.AddScore();
             }
         }
     }

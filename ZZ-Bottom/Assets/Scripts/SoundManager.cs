@@ -32,6 +32,10 @@ public class SoundManager : Singleton<SoundManager>
     public AudioClip Win;
     public AudioClip Lose;
 
+    public void Start()
+    {
+        m_audioSourceMusic.clip = Music;
+    }
 
     public void PlaySfx(AudioClip clip)
     {
