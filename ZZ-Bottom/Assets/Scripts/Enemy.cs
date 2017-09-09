@@ -6,16 +6,14 @@ public class Enemy : MonoBehaviour
 {
     public DamageMultiplier Multipliers;
     public float Health = 100f;
- 
-	// Use this for initialization
-	void Start ()
+
+    // Use this for initialization
+    void Start()
     {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    }
+
+    // Update is called once per frame
+    void Update()
     {
-		
-	}
+    }
 }
