@@ -81,6 +81,10 @@ public class PlayerController : BaseObject
 
         m_targetVelocity = move * MaxSpeed;
         DebugVelocity = m_velocity;
+
+        var isLucky = Math.Abs(m_playerWeapon.CheckLuckyShot().Angle) < float.Epsilon;
+        if (m_animator.GetBool("lucky") == isLucky) return;
+        m_animator.SetBool("lucky", isLucky);
     }
 
     protected override void OnStart()
@@ -94,13 +98,5 @@ public class PlayerController : BaseObject
     {
         var collisions = m_rb2D.GetContacts(m_bulletsFilter);
         collisions.ForEach(x => x.collider.gameObject.GetComponent<BaseBullet>().DoPlayer(this));
-    }
-
-    private void Update()
-    {
-        var isLucky = Math.Abs(m_playerWeapon.CheckLuckyShot().Angle) < float.Epsilon;
-        if(m_animator.GetBool("lucky") == isLucky) return;
-        m_animator.SetBool("lucky", isLucky);
-
     }
 }
