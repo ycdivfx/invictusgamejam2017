@@ -16,7 +16,6 @@ public class PlayerWeapon : MonoBehaviour
         {
             var bullet = Instantiate(LuckyBulletObject);
             bullet.transform.position = transform.position + new Vector3(BulletStartOffset.x, BulletStartOffset.y);
-            bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(10, 0);
             bullet.Shoot();
         }
     }
