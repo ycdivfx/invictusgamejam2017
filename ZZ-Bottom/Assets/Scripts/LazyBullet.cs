@@ -14,6 +14,5 @@ public class LazyBullet : BaseBullet
         var deltaTime = (int)((Time.time - m_startTime) % 0.5f);
         if (deltaTime != 1)
             GetComponent<Rigidbody2D>().gravityScale = 10f;
-
     }
 }
