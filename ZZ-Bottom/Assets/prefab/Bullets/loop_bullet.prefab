@@ -102,7 +102,6 @@ MonoBehaviour:
   Damage: 10
   DestroyAfter: 5000
   Speed: 10
-  m_angle: 0
 --- !u!212 &212666279970529138
 SpriteRenderer:
   m_ObjectHideFlags: 1
