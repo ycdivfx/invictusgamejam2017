@@ -14,11 +14,11 @@ TagManager:
   - 
   - 
   - Background
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Terrain
+  - Player
+  - Enemies
+  - Bullet
+  - CrazyBullet
   - 
   - 
   - 

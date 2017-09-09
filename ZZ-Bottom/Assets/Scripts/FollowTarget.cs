@@ -6,12 +6,28 @@ public class FollowTarget : MonoBehaviour
 {
     public Transform TargetToFollow;
     public float Drag = 0.05f;
+    public float Buffer = 1f;
+
+    private Vector3 m_newPosition;
+
+    private void Awake()
+    {
+        m_newPosition = transform.position;
+    }
+
 
     // Update is called once per frame
-    private void FixedUpdate () {
-	    if (!(TargetToFollow.position.x > transform.position.x)) return;
+    private void Update() {
+	    if (!(TargetToFollow.position.x - transform.position.x > Buffer)) return;
 
-        var newPosition = new Vector3(TargetToFollow.position.x, transform.position.y, transform.position.z);
-	    transform.position = Vector3.Lerp(transform.position, newPosition, Drag);
+        m_newPosition = new Vector3(TargetToFollow.position.x, transform.position.y, transform.position.z);
+        m_newPosition = Vector3.Lerp(transform.position, m_newPosition, Drag);
 	}
+
+    private void FixedUpdate()
+    {
+        transform.position = m_newPosition;
+    }
+
+
 }
