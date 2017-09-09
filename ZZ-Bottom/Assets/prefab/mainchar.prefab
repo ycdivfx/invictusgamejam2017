@@ -268,24 +268,28 @@ MonoBehaviour:
   GoldBullet: {fileID: 21300000, guid: 63d0afc9e2cdbaf4483b390486a855cc, type: 3}
   SilverBullet: {fileID: 21300000, guid: bd67160e16718474f9c0f8e47f760fb4, type: 3}
   BronzeBullet: {fileID: 21300000, guid: 671b7a04eaf1151468dff71c970827e0, type: 3}
-  SweetDistance: 13
+  SweetDistance: 10
   Stats:
   - Probability:
       Min: 0.95
       Max: 1.1
     Angle: 45
+    MinAngle: 40
   - Probability:
       Min: 0.75
       Max: 0.95
     Angle: 0
+    MinAngle: 0
   - Probability:
-      Min: 0.2
+      Min: 0.5
       Max: 0.75
-    Angle: 25
+    Angle: 90
+    MinAngle: 80
   - Probability:
       Min: -0.1
-      Max: 0.2
+      Max: 0.5
     Angle: 90
+    MinAngle: 89
   shotAngle: 0
   index: 0
   closerEnemy: {fileID: 0}

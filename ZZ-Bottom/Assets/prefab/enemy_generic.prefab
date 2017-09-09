@@ -142,13 +142,14 @@ MonoBehaviour:
     Gold: 4
     Silver: 3
     Bronze: 2
-  m_health: 15
+  m_health: 6
   Speed: 0
   PlayerBullets:
     serializedVersion: 2
     m_Bits: 4096
   TimeoutBeforeRemove: 2
   Score: 0
+  Type: 0
 --- !u!212 &212628982722152756
 SpriteRenderer:
   m_ObjectHideFlags: 1

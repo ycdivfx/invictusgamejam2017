@@ -7520,7 +7520,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4308498041971410, guid: c40df3f240428d544a8c47060d99c705, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 109.2
+      value: 126.2
       objectReference: {fileID: 0}
     - target: {fileID: 4308498041971410, guid: c40df3f240428d544a8c47060d99c705, type: 2}
       propertyPath: m_LocalPosition.y
@@ -7558,6 +7558,16 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114449765938710254, guid: c40df3f240428d544a8c47060d99c705,
+        type: 2}
+      propertyPath: SpawnTime
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114449765938710254, guid: c40df3f240428d544a8c47060d99c705,
+        type: 2}
+      propertyPath: Velocity
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c40df3f240428d544a8c47060d99c705, type: 2}
@@ -8031,6 +8041,16 @@ Prefab:
       value: 
       objectReference: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000,
         type: 0}
+    - target: {fileID: 114449765938710254, guid: c40df3f240428d544a8c47060d99c705,
+        type: 2}
+      propertyPath: SpawnTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114449765938710254, guid: c40df3f240428d544a8c47060d99c705,
+        type: 2}
+      propertyPath: Velocity
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c40df3f240428d544a8c47060d99c705, type: 2}
   m_IsPrefabParent: 0
@@ -11020,6 +11040,7 @@ MonoBehaviour:
   PowerUp: {fileID: 8300000, guid: 534699f147378b647916355823232df8, type: 3}
   Win: {fileID: 8300000, guid: df3e58e1da0460b4289dbc465dacae0c, type: 3}
   Lose: {fileID: 8300000, guid: b984b03ae565450469bfa1e46064eb9b, type: 3}
+  LuckyShot: {fileID: 0}
 --- !u!1 &652394900
 GameObject:
   m_ObjectHideFlags: 0
@@ -22432,11 +22453,11 @@ RectTransform:
   m_Father: {fileID: 1001880468}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10, y: -10}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 10, y: -80}
   m_SizeDelta: {x: 64, y: 64}
-  m_Pivot: {x: 1, y: 1}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &1276931202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30643,7 +30664,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4308498041971410, guid: c40df3f240428d544a8c47060d99c705, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 23.928009
+      value: 50.73
       objectReference: {fileID: 0}
     - target: {fileID: 4308498041971410, guid: c40df3f240428d544a8c47060d99c705, type: 2}
       propertyPath: m_LocalPosition.y
@@ -30672,6 +30693,16 @@ Prefab:
     - target: {fileID: 4308498041971410, guid: c40df3f240428d544a8c47060d99c705, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114449765938710254, guid: c40df3f240428d544a8c47060d99c705,
+        type: 2}
+      propertyPath: SpawnTime
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114449765938710254, guid: c40df3f240428d544a8c47060d99c705,
+        type: 2}
+      propertyPath: Velocity
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c40df3f240428d544a8c47060d99c705, type: 2}
