@@ -50,6 +50,8 @@ public class BaseObject : MonoBehaviour
 
     private void FixedUpdate()
     {
+        OnFixedUpdate();
+
         m_velocity += GravityModifier * Physics2D.gravity * Time.deltaTime;
         m_velocity.x = m_targetVelocity.x;
 
@@ -66,8 +68,6 @@ public class BaseObject : MonoBehaviour
         move = Vector2.up * deltaPosition.y;
 
         Movement(move, true);
-
-        OnFixedUpdate();
     }
 
     protected virtual void OnFixedUpdate()

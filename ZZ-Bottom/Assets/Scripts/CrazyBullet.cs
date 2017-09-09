@@ -6,9 +6,11 @@ public class CrazyBullet : BaseBullet
 {
     protected override void OnShoot()
     {
+        
         var x = Mathf.Cos(Mathf.Deg2Rad * m_angle);
         var y = Mathf.Sin(Mathf.Deg2Rad * m_angle);
         var velocity = new Vector2(x, y).normalized * Speed;
+
         GetComponent<Rigidbody2D>().velocity = velocity;
     }
 

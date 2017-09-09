@@ -8,6 +8,8 @@ public class Powerup : MonoBehaviour
     [SerializeField]
     private int m_numberOfShoots = 2;
 
+    public BulletType Type = BulletType.Normal;
+
     public UnityEvent OnOutOfShoots = new UnityEvent(); 
 
     public int NumberOfShoots
@@ -20,4 +22,12 @@ public class Powerup : MonoBehaviour
                 OnOutOfShoots.Invoke();
         }
     }
+}
+
+public enum BulletType
+{
+    Normal,
+    Gold,
+    Silver,
+    Bronze
 }
