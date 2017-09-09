@@ -2997,7 +2997,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e2ac25cee9bbf4ba03f332f46b5411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LuckyBulletObject: {fileID: 0}
+  LuckyBulletObject: {fileID: 114590913321482644, guid: 8e24089b635696448af7d4121786b3ed,
+    type: 2}
   CrazyBulletObject: {fileID: 0}
   BulletStartOffset: {x: 0, y: 0}
   Distance: 0
