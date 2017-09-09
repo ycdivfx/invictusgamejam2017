@@ -9,7 +9,7 @@ public class Enemy : BaseObject
     public DamageMultiplier Multipliers;
     [SerializeField]
     private float m_health = 5;
-    public Vector2 Speed;
+    public float Speed;
     public LayerMask PlayerBullets;
     public float TimeoutBeforeRemove = 2f;
 
@@ -25,7 +25,7 @@ public class Enemy : BaseObject
             m_health = value;
             if (m_health <= 0)
             {
-                Speed = Vector2.zero;
+                Speed = 0;
                 DestroyObject(gameObject);
             }
         }
@@ -39,13 +39,11 @@ public class Enemy : BaseObject
 
     protected override void ComputeVelocity()
     {
-        m_targetVelocity = Speed;
+        m_targetVelocity = Vector2.left * Speed;
 
         bool flipSprite = (m_spriteRenderer.flipX ? (m_targetVelocity.x > 0.01f) : (m_targetVelocity.x < 0.01f));
-        if (flipSprite)
-        {
+        if (!flipSprite)
             m_spriteRenderer.flipX = !m_spriteRenderer.flipX;
-        }
     }
 
     protected override void OnStart()
@@ -58,5 +56,7 @@ public class Enemy : BaseObject
     {
         var collisions = m_rb2D.GetContacts(m_bulletsFilter);
         collisions.ForEach(x => x.collider.gameObject.GetComponent<BaseBullet>().DoDamage(this));
+
+
     }
 }

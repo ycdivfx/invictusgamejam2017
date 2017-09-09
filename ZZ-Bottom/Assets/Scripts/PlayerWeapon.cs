@@ -48,7 +48,7 @@ public class PlayerWeapon : MonoBehaviour
         if (closerEnemy != null && closerEnemy.transform.position.x > transform.position.x)
         {
             var enemyDistance = Vector2.Distance(closerEnemy.transform.position - new Vector3(0.5f, 0), transform.position + new Vector3(0.5f, 0));
-            prob = Mathf.Clamp((SweetDistance - enemyDistance) / SweetDistance, 0f, 1.1f);
+            prob = Mathf.Clamp(enemyDistance / SweetDistance, 0f, 1.1f);
             var stat = Stats.FirstOrDefault(x => x.InRange(prob) == 0);
             if (stat != null)
                 shotAngle = stat.Angle;
