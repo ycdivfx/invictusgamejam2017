@@ -268,7 +268,7 @@ MonoBehaviour:
   GoldBullet: {fileID: 21300000, guid: 63d0afc9e2cdbaf4483b390486a855cc, type: 3}
   SilverBullet: {fileID: 21300000, guid: bd67160e16718474f9c0f8e47f760fb4, type: 3}
   BronzeBullet: {fileID: 21300000, guid: 671b7a04eaf1151468dff71c970827e0, type: 3}
-  SweetDistance: 10
+  SweetDistance: 13
   Stats:
   - Probability:
       Min: 0.9
