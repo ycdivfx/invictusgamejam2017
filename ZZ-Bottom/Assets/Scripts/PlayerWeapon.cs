@@ -45,7 +45,7 @@ public class PlayerWeapon : MonoBehaviour
         closerEnemy = FindObjectsOfType<Enemy>().ToList().OrderBy(x => Vector2.Distance(x.transform.position, transform.position)).FirstOrDefault();
         if (closerEnemy != null && closerEnemy.transform.position.x > transform.position.x)
         {
-            var enemyDistance = Vector2.Distance(closerEnemy.transform.position - new Vector3(0.5f, 0), transform.position + new Vector3(-0.5f, 0));
+            var enemyDistance = Vector2.Distance(closerEnemy.transform.position - new Vector3(0.5f, 0), transform.position + new Vector3(0.5f, 0));
             prob = Mathf.Clamp((SweetDistance - enemyDistance) / SweetDistance, 0f, 1.1f);
             var stat = Stats.FirstOrDefault(x => x.InRange(prob) == 0);
             if (stat != null)
@@ -56,10 +56,10 @@ public class PlayerWeapon : MonoBehaviour
         bullet.GetComponent<SpriteRenderer>().sprite = NormalBullet;
         bullet.transform.position = transform.position + new Vector3(BulletStartOffset.x, BulletStartOffset.y);
         bullet.Damage = 1;
+        bullet.Type = m_powerups.Use();
         bullet.Shoot(shotAngle);
 
     }
-
 }
 
 [Serializable]
