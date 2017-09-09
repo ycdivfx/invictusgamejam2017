@@ -205,6 +205,60 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &96203948
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 96203949}
+  - component: {fileID: 96203950}
+  m_Layer: 0
+  m_Name: InvisbleWall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &96203949
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 96203948}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 374722905}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &96203950
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 96203948}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -16.244762, y: 0.043815613}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.0475254, y: 15.568428}
+  m_EdgeRadius: 0
 --- !u!1 &163706508
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,6 +917,7 @@ GameObject:
   - component: {fileID: 374722903}
   - component: {fileID: 374722902}
   - component: {fileID: 374722901}
+  - component: {fileID: 374722906}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -936,10 +991,24 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.4, y: 3.75, z: -15.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 96203949}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &374722906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 374722900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff50455cf550eec41915d09bbb90d070, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetToFollow: {fileID: 1457044256}
+  Drag: 0.05
 --- !u!1 &424225190
 GameObject:
   m_ObjectHideFlags: 0
@@ -2673,6 +2742,7 @@ MonoBehaviour:
   MaxSpeed: 7
   JumpTakeOffSpeed: 7
   Health: 400
+  DebugVelocity: {x: 0, y: 0}
 --- !u!50 &1457044260
 Rigidbody2D:
   serializedVersion: 4

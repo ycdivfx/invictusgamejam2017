@@ -7,6 +7,7 @@ public class PlayerController : BaseObject {
     public float MaxSpeed = 7;
     public float JumpTakeOffSpeed = 7;
     public float Health = 400f;
+    public Vector2 DebugVelocity;
 
     private SpriteRenderer m_spriteRenderer;
     private Animator m_animator;
@@ -53,5 +54,6 @@ public class PlayerController : BaseObject {
         m_animator.SetFloat("velocityX", Mathf.Abs(m_velocity.x) / MaxSpeed);
 
         m_targetVelocity = move * MaxSpeed;
+        DebugVelocity = m_targetVelocity;
     }
 }
