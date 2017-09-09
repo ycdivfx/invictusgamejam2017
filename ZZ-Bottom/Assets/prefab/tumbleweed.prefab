@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 247640649788599120}
   m_Layer: 30
   m_Name: tumbleweed
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
