@@ -17,7 +17,6 @@ public class Powerup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.LogFormat("Trigger by {0}", collision.gameObject.tag);
         if (collision.gameObject.tag == "player")
         {
             SoundManager.Instance.PlaySfx(SoundManager.Instance.PowerUp);

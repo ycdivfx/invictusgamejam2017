@@ -43,21 +43,17 @@ public class PlayerWeapon : MonoBehaviour
         SoundManager.Instance.PlaySfx(SoundManager.Instance.Shoot);
         shotAngle = 40f;
         index = Random.Range(0, CrazyBulletObject.Count);
-        //closerEnemy = FindObjectsOfType<Enemy>().ToList().OrderBy(x => Vector2.Distance(x.transform.position, transform.position)).FirstOrDefault();
 
+        var stat = CheckLuckyShot();
+        if (stat != null)
+            shotAngle = stat.Angle;
 
-        //if (closerEnemy != null && closerEnemy.transform.position.x > transform.position.x)
-        //{
-            var stat = CheckLuckyShot();
-            if (stat != null)
-                shotAngle = stat.Angle;
-        //}
         bool isLuckShot = Math.Abs(shotAngle) < float.Epsilon;
 
-        if (isLuckShot)
-            SoundManager.Instance.PlaySfx(SoundManager.Instance.LuckyShot);
-        else
-            SoundManager.Instance.PlaySfx(SoundManager.Instance.Shoot); shotAngle = isLuckShot ? shotAngle : Random.Range(-shotAngle, shotAngle);
+        SoundManager.Instance.PlaySfx(isLuckShot ? SoundManager.Instance.LuckyShot : SoundManager.Instance.Shoot);
+
+        shotAngle = isLuckShot ? shotAngle : Random.Range(stat == null ? -shotAngle : stat.MinAngle, shotAngle);
+
         var bullet = Instantiate(isLuckShot ? LuckyBullet : CrazyBulletObject[index]);
 
         bullet.GetComponent<SpriteRenderer>().sprite = NormalBullet;
@@ -109,6 +105,7 @@ public class BulletStats
 {
     public BulletProblability Probability;
     public float Angle = 0f;
+    public float MinAngle = 0f;
 
     public int InRange(float probability)
     {

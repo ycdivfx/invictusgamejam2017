@@ -13,7 +13,7 @@ public class Enemy : BaseObject
     public LayerMask PlayerBullets;
     public float TimeoutBeforeRemove = 2f;
     public int Score;
-    BulletType Type = BulletType.Normal;
+    public BulletType Type = BulletType.Normal;
 
     private SpriteRenderer m_spriteRenderer;
     private Animator m_animator;

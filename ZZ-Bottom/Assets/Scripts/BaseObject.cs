@@ -35,9 +35,6 @@ public class BaseObject : MonoBehaviour
         OnStart();
     }
 
-    protected virtual void OnStart()
-    { }
-
     private void Update()
     {
         m_targetVelocity = Vector2.zero;
@@ -45,7 +42,15 @@ public class BaseObject : MonoBehaviour
         OnUpdate();
     }
 
+    protected virtual void OnStart()
+    { }
+
     protected virtual void OnUpdate()
+    {
+        
+    }
+
+    protected virtual void OnFixedUpdate()
     {
         
     }
@@ -74,11 +79,6 @@ public class BaseObject : MonoBehaviour
         move = Vector2.up * deltaPosition.y;
 
         Movement(move, true);
-    }
-
-    protected virtual void OnFixedUpdate()
-    {
-        
     }
 
     private void Movement(Vector2 move, bool yMovement)
