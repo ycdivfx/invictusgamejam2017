@@ -29,6 +29,7 @@ public class PlayerPowerup : MonoBehaviour
             ActivePowerup = Powerups.Dequeue();
 
         if (ActivePowerup == null) return BulletType.Normal;
+
         var powerup = ActivePowerup;
         powerup.NumberOfShoots--;
         if (powerup.NumberOfShoots == 0) ActivePowerup = null;

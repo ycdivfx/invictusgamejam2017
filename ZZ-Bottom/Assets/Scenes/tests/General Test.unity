@@ -5274,7 +5274,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_audioSourceSFX: {fileID: 712080873}
+  toggleSFX: {fileID: 0}
+  sliderSFX: {fileID: 0}
   m_audioSourceMusic: {fileID: 712080871}
+  toggleMusic: {fileID: 0}
+  sliderMusic: {fileID: 0}
   Music: {fileID: 8300000, guid: 7c39dd6568107ec47a082df325e1ef39, type: 3}
   Shoot: {fileID: 8300000, guid: e2a9caf0c70b682439f9c4e27a58bc2d, type: 3}
   HitChar: {fileID: 8300000, guid: 39821d4d1b917d34f96868beb745c594, type: 3}
@@ -8257,6 +8261,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114158485437863148, guid: fc1cae64ebfd5a4419f961cb10f784db,
+        type: 2}
+      propertyPath: CrazyBulletObject.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4383822836278662, guid: fc1cae64ebfd5a4419f961cb10f784db, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.37
@@ -8293,6 +8302,24 @@ Prefab:
       propertyPath: m_TagString
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 114158485437863148, guid: fc1cae64ebfd5a4419f961cb10f784db,
+        type: 2}
+      propertyPath: CrazyBulletObject.Array.data[1]
+      value: 
+      objectReference: {fileID: 114017856070306608, guid: f393820227263e04fb7abaf23d13b81c,
+        type: 2}
+    - target: {fileID: 114158485437863148, guid: fc1cae64ebfd5a4419f961cb10f784db,
+        type: 2}
+      propertyPath: CrazyBulletObject.Array.data[2]
+      value: 
+      objectReference: {fileID: 114040368808411586, guid: f5dfd0510b4770940a86f4dccfdccdb5,
+        type: 2}
+    - target: {fileID: 114158485437863148, guid: fc1cae64ebfd5a4419f961cb10f784db,
+        type: 2}
+      propertyPath: CrazyBulletObject.Array.data[3]
+      value: 
+      objectReference: {fileID: 114300699360949106, guid: 5c5d9bc02e3054a469acc3080f663335,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc1cae64ebfd5a4419f961cb10f784db, type: 2}
   m_IsPrefabParent: 0

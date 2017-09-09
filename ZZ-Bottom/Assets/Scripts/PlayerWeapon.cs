@@ -40,7 +40,7 @@ public class PlayerWeapon : MonoBehaviour
 
     private void Shoot()
     {
-        shotAngle = Random.Range(-1f,1f) * 40f;
+        shotAngle = Random.Range(-1f, 1f) * 40f;
         index = Random.Range(0, CrazyBulletObject.Count - 1);
         closerEnemy = FindObjectsOfType<Enemy>().ToList().OrderBy(x => Vector2.Distance(x.transform.position, transform.position)).FirstOrDefault();
         if (closerEnemy != null && closerEnemy.transform.position.x > transform.position.x)
@@ -57,6 +57,29 @@ public class PlayerWeapon : MonoBehaviour
         bullet.transform.position = transform.position + new Vector3(BulletStartOffset.x, BulletStartOffset.y);
         bullet.Damage = 1;
         bullet.Type = m_powerups.Use();
+        switch (bullet.Type)
+        {
+            case BulletType.Normal:
+                bullet.GetComponent<SpriteRenderer>().sprite = NormalBullet;
+                bullet.name += " Normal";
+                break;
+            case BulletType.Gold:
+                bullet.GetComponent<SpriteRenderer>().sprite = GoldBullet;
+                bullet.name += " Gold";
+                break;
+            case BulletType.Silver:
+                bullet.GetComponent<SpriteRenderer>().sprite = SilverBullet;
+                bullet.name += " Silver";
+                break;
+            case BulletType.Bronze:
+                bullet.GetComponent<SpriteRenderer>().sprite = BronzeBullet;
+                bullet.name += " Bronze";
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+        //bullet.transform.localScale = new Vector3(2,2,2);
+        bullet.GetComponent<Rigidbody2D>().rotation = shotAngle;
         bullet.Shoot(shotAngle);
 
     }
@@ -84,8 +107,8 @@ public class BulletStats
 [Serializable]
 public class BulletProblability
 {
-    [Range(-0.1f,1.1f)]
+    [Range(-0.1f, 1.1f)]
     public float Min = 0f;
-    [Range(-0.1f,1.1f)]
+    [Range(-0.1f, 1.1f)]
     public float Max = 0f;
 }
