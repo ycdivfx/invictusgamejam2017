@@ -100,7 +100,7 @@ public class PlayerController : BaseObject
     {
         var stats = m_playerWeapon.CheckLuckyShot();
         var isLucky = stats != null && Math.Abs(stats.Angle) < float.Epsilon;
-        //if (m_animator.GetBool("lucky") == isLucky) return;
+        if (m_animator.GetBool("lucky") == isLucky) return;
         m_animator.SetBool("lucky", isLucky);
     }
 }
