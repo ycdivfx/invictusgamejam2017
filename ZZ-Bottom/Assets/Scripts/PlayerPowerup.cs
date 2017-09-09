@@ -35,16 +35,4 @@ public class PlayerPowerup : MonoBehaviour
         if (powerup.NumberOfShoots == 0) ActivePowerup = null;
         return powerup.Type;
     }
-
-    //private void FixedUpdate()
-    //{
-    //    var collisions = m_rb2D.GetContacts(m_powerupFilter);
-    //    if(collisions.Count == 0) return;
-
-    //    collisions.ForEach(x =>
-    //    {
-    //        Powerups.Enqueue(x.collider.GetComponent<Powerup>());
-    //        DestroyObject(x.collider.gameObject);
-    //    });
-    //}
 }

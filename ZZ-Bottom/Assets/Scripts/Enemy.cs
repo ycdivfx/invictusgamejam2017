@@ -10,7 +10,7 @@ public class Enemy : BaseObject
     [SerializeField]
     private float m_health = 5;
     public float Speed;
-    public LayerMask PlayerBullets;
+    public LayerMask EnemyBullets;
     public float TimeoutBeforeRemove = 2f;
 
     private SpriteRenderer m_spriteRenderer;
@@ -48,7 +48,7 @@ public class Enemy : BaseObject
 
     protected override void OnStart()
     {
-        m_bulletsFilter.SetLayerMask(PlayerBullets);
+        m_bulletsFilter.SetLayerMask(EnemyBullets);
         m_bulletsFilter.useLayerMask = true;
     }
 
@@ -56,7 +56,5 @@ public class Enemy : BaseObject
     {
         var collisions = m_rb2D.GetContacts(m_bulletsFilter);
         collisions.ForEach(x => x.collider.gameObject.GetComponent<BaseBullet>().DoDamage(this));
-
-
     }
 }

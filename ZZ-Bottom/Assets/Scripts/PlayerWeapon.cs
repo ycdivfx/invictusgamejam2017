@@ -31,7 +31,7 @@ public class PlayerWeapon : MonoBehaviour
         if (!m_powerups) m_powerups = gameObject.AddComponent<PlayerPowerup>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (Input.GetButtonDown("Fire1"))
             Shoot();
@@ -41,7 +41,7 @@ public class PlayerWeapon : MonoBehaviour
     private void Shoot()
     {
         shotAngle = Random.Range(-1f, 1f) * 40f;
-        index = Random.Range(0, CrazyBulletObject.Count - 1);
+        index = Random.Range(0, CrazyBulletObject.Count);
         closerEnemy = FindObjectsOfType<Enemy>().ToList().OrderBy(x => Vector2.Distance(x.transform.position, transform.position)).FirstOrDefault();
 
 

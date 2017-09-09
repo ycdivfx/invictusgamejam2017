@@ -30,9 +30,14 @@ public class BaseBullet : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public void DoDamage(Enemy enemy)
+    public virtual void DoDamage(Enemy enemy)
     {
         enemy.Health -= enemy.Multipliers.CalculateDamage(Damage, Type);
         Destroy(gameObject);
+    }
+
+    public void DoPlayer(PlayerController player)
+    {
+        player.Health -= Damage;
     }
 }

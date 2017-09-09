@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 61485689850189224}
   - component: {fileID: 50203647093543942}
   - component: {fileID: 114740799181429186}
+  - component: {fileID: 114025316714038820}
   m_Layer: 11
   m_Name: enemy_generic
   m_TagString: Untagged
@@ -106,6 +107,22 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114025316714038820
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1218719890253188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd1d8c600f6c49e43b3bf4063b7c531b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BulletPrefab: {fileID: 114590913321482644, guid: a93e7ce290fbe85458702039c6bd2cb8,
+    type: 2}
+  BulletSprite: {fileID: 21300000, guid: 0e37648e697e9624390526b2ddd3dfbd, type: 3}
+  BulletStartOffset: {x: 0, y: 0}
+  Damage: 0
 --- !u!114 &114740799181429186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,10 +143,10 @@ MonoBehaviour:
     Silver: 0
     Bronze: 0
   m_health: 15
-  Speed: {x: -2, y: 0}
-  PlayerBullets:
+  Speed: 6
+  EnemyBullets:
     serializedVersion: 2
-    m_Bits: 4096
+    m_Bits: 0
   TimeoutBeforeRemove: 2
 --- !u!212 &212628982722152756
 SpriteRenderer:
