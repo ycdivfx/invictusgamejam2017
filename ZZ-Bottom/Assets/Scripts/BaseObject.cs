@@ -42,6 +42,12 @@ public class BaseObject : MonoBehaviour
     {
         m_targetVelocity = Vector2.zero;
         ComputeVelocity();
+        OnUpdate();
+    }
+
+    protected virtual void OnUpdate()
+    {
+        
     }
 
     protected virtual void ComputeVelocity()
