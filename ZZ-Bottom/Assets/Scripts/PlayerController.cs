@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using zzbottom.helpers;
@@ -16,6 +17,7 @@ public class PlayerController : BaseObject
     private ContactFilter2D m_bulletsFilter;
     private SpriteRenderer m_spriteRenderer;
     private Animator m_animator;
+    private PlayerWeapon m_playerWeapon;
 
     public float Health
     {
@@ -85,11 +87,20 @@ public class PlayerController : BaseObject
     {
         m_bulletsFilter.SetLayerMask(EnemyBullets);
         m_bulletsFilter.useLayerMask = true;
+        m_playerWeapon = GetComponent<PlayerWeapon>();
     }
 
     protected override void OnFixedUpdate()
     {
         var collisions = m_rb2D.GetContacts(m_bulletsFilter);
         collisions.ForEach(x => x.collider.gameObject.GetComponent<BaseBullet>().DoPlayer(this));
+    }
+
+    private void Update()
+    {
+        var isLucky = Math.Abs(m_playerWeapon.CheckLuckyShot().Angle) < float.Epsilon;
+        if(m_animator.GetBool("lucky") == isLucky) return;
+        m_animator.SetBool("lucky", isLucky);
+
     }
 }
