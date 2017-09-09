@@ -2,15 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerPowerup : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+public class PlayerPowerup : MonoBehaviour
+{
+    public Queue<Powerup> Powerups = new Queue<Powerup>();
+    public Powerup ActivePowerup;
 }

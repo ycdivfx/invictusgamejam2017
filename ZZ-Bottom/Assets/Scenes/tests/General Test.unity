@@ -10370,11 +10370,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e2ac25cee9bbf4ba03f332f46b5411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LuckyBulletObject: {fileID: 114590913321482644, guid: 8e24089b635696448af7d4121786b3ed,
+  LuckyBullet: {fileID: 114590913321482644, guid: 8e24089b635696448af7d4121786b3ed,
     type: 2}
-  CrazyBulletObject: {fileID: 0}
+  CrazyBulletObject:
+  - {fileID: 114540943957589010, guid: deb8fd0ae429cab42be9e08824fdc0b5, type: 2}
+  - {fileID: 114017856070306608, guid: f393820227263e04fb7abaf23d13b81c, type: 2}
   BulletStartOffset: {x: 1.25, y: 0.25}
-  SweetDistance: 0
+  NormalBullet: {fileID: 21300000, guid: 0e37648e697e9624390526b2ddd3dfbd, type: 3}
+  GoldBullet: {fileID: 21300000, guid: 63d0afc9e2cdbaf4483b390486a855cc, type: 3}
+  SilverBullet: {fileID: 21300000, guid: bd67160e16718474f9c0f8e47f760fb4, type: 3}
+  BronzeBullet: {fileID: 21300000, guid: 671b7a04eaf1151468dff71c970827e0, type: 3}
+  SweetDistance: 10
+  Stats:
+  - Probability:
+      Min: 0.9
+      Max: 1.1
+    Angle: 90
+  - Probability:
+      Min: 0.8
+      Max: 0.9
+    Angle: 0
+  - Probability:
+      Min: 0.5
+      Max: 0.8
+    Angle: 35
+  - Probability:
+      Min: -0.1
+      Max: 0.5
+    Angle: 45
+  shotAngle: 0
+  index: 0
+  closerEnemy: {fileID: 0}
+  prob: 0
 --- !u!1 &1464482600
 GameObject:
   m_ObjectHideFlags: 0
@@ -12720,11 +12747,12 @@ MonoBehaviour:
     Air: 0
     Fire: 0
     Earth: 0
-  Health: 100
+  m_health: 15
   Speed: {x: -2, y: 0}
   PlayerBullets:
     serializedVersion: 2
     m_Bits: 4096
+  TimeoutBeforeRemove: 2
 --- !u!50 &1792530294
 Rigidbody2D:
   serializedVersion: 4

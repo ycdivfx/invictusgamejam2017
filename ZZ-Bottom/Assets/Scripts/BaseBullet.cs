@@ -8,10 +8,12 @@ public class BaseBullet : MonoBehaviour
     public float DestroyAfter = 2f;
     public float Speed = 10f;
     protected float m_startTime;
+    protected float m_angle = 0f;
 
-    public void Shoot()
+    public void Shoot(float shotAngle)
     {
         m_startTime = Time.time;
+        m_angle = shotAngle;
         OnShoot();
     }
 

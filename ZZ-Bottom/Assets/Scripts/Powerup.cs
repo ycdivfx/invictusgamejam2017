@@ -1,16 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class Powerup : MonoBehaviour {
+public class Powerup : MonoBehaviour
+{
+    [SerializeField]
+    private int m_numberOfShoots = 2;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public UnityEvent OnOutOfShoots = new UnityEvent(); 
+
+    public int NumberOfShoots
+    {
+        get { return m_numberOfShoots; }
+        set
+        {
+            m_numberOfShoots = value;
+            if(m_numberOfShoots <= 0)
+                OnOutOfShoots.Invoke();
+        }
+    }
 }
