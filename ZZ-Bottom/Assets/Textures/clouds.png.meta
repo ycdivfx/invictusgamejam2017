@@ -1,11 +1,13 @@
 fileFormatVersion: 2
-guid: 0308d5ba3d4c8fc49b44882cb09d4796
-timeCreated: 1504929789
+guid: c795649bac9a3ee40a74d6c220e77ad9
+timeCreated: 1504938589
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
-    21300000: enemy_generic_01_0
-    21300002: enemy_generic_01_1
+    21300000: clouds_0
+    21300002: clouds_1
+    21300004: clouds_2
+    21300006: clouds_3
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -47,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 32
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -101,7 +103,35 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemy_generic_01_0
+      name: clouds_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: clouds_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: clouds_2
       rect:
         serializedVersion: 2
         x: 0
@@ -115,7 +145,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy_generic_01_1
+      name: clouds_3
       rect:
         serializedVersion: 2
         x: 256
