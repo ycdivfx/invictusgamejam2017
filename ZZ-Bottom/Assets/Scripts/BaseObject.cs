@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VR.WSA.WebCam;
 
 public class BaseObject : MonoBehaviour
 {
@@ -31,7 +32,11 @@ public class BaseObject : MonoBehaviour
         m_contactFilter.useTriggers = false;
         m_contactFilter.SetLayerMask(Physics2D.GetLayerCollisionMask(gameObject.layer));
         m_contactFilter.useLayerMask = true;
+        OnStart();
     }
+
+    protected virtual void OnStart()
+    { }
 
     private void Update()
     {
@@ -61,6 +66,13 @@ public class BaseObject : MonoBehaviour
         move = Vector2.up * deltaPosition.y;
 
         Movement(move, true);
+
+        OnFixedUpdate();
+    }
+
+    protected virtual void OnFixedUpdate()
+    {
+        
     }
 
     private void Movement(Vector2 move, bool yMovement)
