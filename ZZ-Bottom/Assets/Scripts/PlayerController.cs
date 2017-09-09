@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using zzbottom.helpers;
 
-public class PlayerController : BaseObject {
+public class PlayerController : BaseObject
+{
 
     public float MaxSpeed = 7;
     public float JumpTakeOffSpeed = 7;
@@ -41,9 +42,15 @@ public class PlayerController : BaseObject {
         var move = Vector2.zero;
 
         move.x = Input.GetAxis("Horizontal");
+        if (Input.GetButtonDown("Horizontal"))
+        {
+            SoundManager.Instance.PlaySfx(SoundManager.Instance.Walk);
+            Debug.Log("Move");
+        }
 
         if (Input.GetButtonDown("Jump") && m_grounded)
         {
+            SoundManager.Instance.PlaySfx(SoundManager.Instance.Jump);
             m_velocity.y = JumpTakeOffSpeed;
             m_jumps++;
         }
@@ -56,10 +63,10 @@ public class PlayerController : BaseObject {
         //}
         if (Input.GetButtonDown("Jump") && !m_grounded && m_jumps < MaxJumps)
         {
+            SoundManager.Instance.PlaySfx(SoundManager.Instance.Jump);
             m_velocity.y += JumpTakeOffSpeed;
             m_jumps++;
         }
-
 
         //bool flipSprite = (m_spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < 0.01f));
         //if (flipSprite)

@@ -20,6 +20,7 @@ public class Powerup : MonoBehaviour
         Debug.LogFormat("Trigger by {0}", collision.gameObject.tag);
         if (collision.gameObject.tag == "player")
         {
+            SoundManager.Instance.PlaySfx(SoundManager.Instance.PowerUp);
             var powerups = collision.gameObject.GetComponent<PlayerPowerup>();
             powerups.Powerups.Enqueue(this.Data);
             DestroyObject(gameObject);
