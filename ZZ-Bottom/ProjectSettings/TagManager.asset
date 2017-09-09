@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - bullet
+  - player
   layers:
   - Default
   - TransparentFX
@@ -26,6 +27,7 @@ TagManager:
   - 
   - 
   - 
+  - Powerup
   - 
   - 
   - 
@@ -36,8 +38,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - Wall
   m_SortingLayers:
   - name: Background
     uniqueID: 2510063135

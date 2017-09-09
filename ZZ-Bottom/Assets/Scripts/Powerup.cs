@@ -1,31 +1,29 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[Serializable]
+public class PowerUpData
+{
+    public int NumberOfShoots = 2;
+    public BulletType Type = BulletType.Normal;
+}
+
 public class Powerup : MonoBehaviour
 {
-    [SerializeField]
-    private int m_numberOfShoots = 2;
+    public PowerUpData Data;
 
-    public BulletType Type = BulletType.Normal;
-
-    public UnityEvent OnOutOfShoots = new UnityEvent(); 
-
-    public int NumberOfShoots
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        get { return m_numberOfShoots; }
-        set
+        Debug.LogFormat("Trigger by {0}", collision.gameObject.tag);
+        if (collision.gameObject.tag == "player")
         {
-            m_numberOfShoots = value;
-            if(m_numberOfShoots <= 0)
-                OnOutOfShoots.Invoke();
+            var powerups = collision.gameObject.GetComponent<PlayerPowerup>();
+            powerups.Powerups.Enqueue(this.Data);
+            DestroyObject(gameObject);
         }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        //collision.gameObject.layer == 
     }
 
 
