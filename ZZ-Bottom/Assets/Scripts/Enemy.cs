@@ -21,6 +21,12 @@ public class Enemy : BaseObject
     protected override void ComputeVelocity()
     {
         m_targetVelocity = Speed;
+
+        bool flipSprite = (m_spriteRenderer.flipX ? (m_targetVelocity.x > 0.01f) : (m_targetVelocity.x < 0.01f));
+        if (flipSprite)
+        {
+            m_spriteRenderer.flipX = !m_spriteRenderer.flipX;
+        }
     }
 
     protected override void OnStart()
