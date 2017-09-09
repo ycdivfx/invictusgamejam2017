@@ -8,7 +8,7 @@ public class PlayerWeapon : MonoBehaviour
     public CrazyBullet CrazyBulletObject;
     public Vector2 BulletStartOffset;
 
-    public float Distance;
+    public float SweetDistance;
 
     private void FixedUpdate()
     {
