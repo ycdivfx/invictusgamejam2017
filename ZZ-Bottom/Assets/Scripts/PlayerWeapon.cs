@@ -31,7 +31,7 @@ public class PlayerWeapon : MonoBehaviour
         if (!m_powerups) m_powerups = gameObject.AddComponent<PlayerPowerup>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (Input.GetButtonDown("Fire1"))
             Shoot();
@@ -40,8 +40,9 @@ public class PlayerWeapon : MonoBehaviour
 
     private void Shoot()
     {
+        SoundManager.Instance.PlaySfx(SoundManager.Instance.Shoot);
         shotAngle = Random.Range(-1f, 1f) * 40f;
-        index = Random.Range(0, CrazyBulletObject.Count - 1);
+        index = Random.Range(0, CrazyBulletObject.Count);
         closerEnemy = FindObjectsOfType<Enemy>().ToList().OrderBy(x => Vector2.Distance(x.transform.position, transform.position)).FirstOrDefault();
 
 
@@ -54,7 +55,7 @@ public class PlayerWeapon : MonoBehaviour
                 shotAngle = stat.Angle;
         }
         bool isLuckShot = Math.Abs(shotAngle) < float.Epsilon;
-        if(isLuckShot)
+        if (isLuckShot)
         {
             Debug.Log("Luckshot");
         }
@@ -88,7 +89,6 @@ public class PlayerWeapon : MonoBehaviour
         //bullet.transform.localScale = new Vector3(2,2,2);
         bullet.GetComponent<Rigidbody2D>().rotation = shotAngle;
         bullet.Shoot(shotAngle);
-
     }
 }
 

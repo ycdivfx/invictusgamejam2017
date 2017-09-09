@@ -1,16 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using zzbottom.helpers;
 
-public class PlayerController : BaseObject {
+public class PlayerController : BaseObject
+{
 
     public float MaxSpeed = 7;
     public float JumpTakeOffSpeed = 7;
-    public float Health = 400f;
+    [SerializeField]
+    private float m_health = 400f;
+    public LayerMask EnemyBullets;
     public Vector2 DebugVelocity;
 
+    private ContactFilter2D m_bulletsFilter;
     private SpriteRenderer m_spriteRenderer;
     private Animator m_animator;
+
+    public float Health
+    {
+        get { return m_health; }
+        set
+        {
+            m_health = value;
+            if (m_health <= 0)
+            {
+                GameManager.Instance.Lost();
+            }
+        }
+    }
 
     // Use this for initialization
     private void Awake()
@@ -24,9 +42,15 @@ public class PlayerController : BaseObject {
         var move = Vector2.zero;
 
         move.x = Input.GetAxis("Horizontal");
+        if (Input.GetButtonDown("Horizontal"))
+        {
+            SoundManager.Instance.PlaySfx(SoundManager.Instance.Walk);
+            Debug.Log("Move");
+        }
 
         if (Input.GetButtonDown("Jump") && m_grounded)
         {
+            SoundManager.Instance.PlaySfx(SoundManager.Instance.Jump);
             m_velocity.y = JumpTakeOffSpeed;
             m_jumps++;
         }
@@ -39,10 +63,10 @@ public class PlayerController : BaseObject {
         //}
         if (Input.GetButtonDown("Jump") && !m_grounded && m_jumps < MaxJumps)
         {
+            SoundManager.Instance.PlaySfx(SoundManager.Instance.Jump);
             m_velocity.y += JumpTakeOffSpeed;
             m_jumps++;
         }
-
 
         //bool flipSprite = (m_spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < 0.01f));
         //if (flipSprite)
@@ -55,5 +79,17 @@ public class PlayerController : BaseObject {
 
         m_targetVelocity = move * MaxSpeed;
         DebugVelocity = m_velocity;
+    }
+
+    protected override void OnStart()
+    {
+        m_bulletsFilter.SetLayerMask(EnemyBullets);
+        m_bulletsFilter.useLayerMask = true;
+    }
+
+    protected override void OnFixedUpdate()
+    {
+        var collisions = m_rb2D.GetContacts(m_bulletsFilter);
+        collisions.ForEach(x => x.collider.gameObject.GetComponent<BaseBullet>().DoPlayer(this));
     }
 }

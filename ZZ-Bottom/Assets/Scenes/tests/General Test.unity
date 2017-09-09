@@ -8330,6 +8330,11 @@ Prefab:
       propertyPath: SweetDistance
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 114833263806078082, guid: fc1cae64ebfd5a4419f961cb10f784db,
+        type: 2}
+      propertyPath: EnemyBullets.m_Bits
+      value: 16384
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc1cae64ebfd5a4419f961cb10f784db, type: 2}
   m_IsPrefabParent: 0
