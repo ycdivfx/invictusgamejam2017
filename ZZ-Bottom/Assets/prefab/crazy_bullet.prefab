@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 212666279970529138}
   - component: {fileID: 61372866131585210}
   - component: {fileID: 50638593611600522}
-  - component: {fileID: 114590913321482644}
+  - component: {fileID: 114540943957589010}
   m_Layer: 0
-  m_Name: bullet 1
+  m_Name: crazy_bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54,7 +54,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -62,7 +62,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61372866131585210
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -88,7 +88,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.2}
   m_EdgeRadius: 0
---- !u!114 &114590913321482644
+--- !u!114 &114540943957589010
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -96,12 +96,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1975494045754748}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3639eea0d808b9f4daef88ecb3e8475f, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a15068fd5bde324c8c118574990cdd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 10
-  DestroyAfter: 2
-  Speed: 10
+  DestroyAfter: 5000000
+  Speed: 1
 --- !u!212 &212666279970529138
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerWeapon : MonoBehaviour
 {
     public LuckyBullet LuckyBulletObject;
+    public LazyBullet LazyBulletObject;
     public CrazyBullet CrazyBulletObject;
     public Vector2 BulletStartOffset;
 
@@ -22,7 +23,7 @@ public class PlayerWeapon : MonoBehaviour
     private void Shoot()
     {
         var enemies = FindObjectOfType<Enemy>();
-        var bullet = Instantiate(LuckyBulletObject);
+        var bullet = Instantiate(CrazyBulletObject);
         bullet.transform.position = transform.position + new Vector3(BulletStartOffset.x, BulletStartOffset.y);
         bullet.Shoot();
 
