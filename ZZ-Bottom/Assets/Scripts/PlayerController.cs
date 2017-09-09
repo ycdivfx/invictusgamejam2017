@@ -12,11 +12,9 @@ public class PlayerController : BaseObject
     [SerializeField]
     private float m_health = 400f;
     public LayerMask EnemyBullets;
-    public LayerMask EnemyMask;
     public Vector2 DebugVelocity;
 
     private ContactFilter2D m_bulletsFilter;
-    private ContactFilter2D m_enemyFilter;
     private SpriteRenderer m_spriteRenderer;
     private Animator m_animator;
     private PlayerWeapon m_playerWeapon;
@@ -90,9 +88,6 @@ public class PlayerController : BaseObject
         m_bulletsFilter.SetLayerMask(EnemyBullets);
         m_bulletsFilter.useLayerMask = true;
 
-        m_enemyFilter.SetLayerMask(EnemyMask);
-        m_enemyFilter.useLayerMask = true;
-
         m_playerWeapon = GetComponent<PlayerWeapon>();
     }
 
@@ -107,14 +102,16 @@ public class PlayerController : BaseObject
         });
     }
 
-    void OnCollisionEnter(Collision col)
+    public void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "enemy")
+        if (col.gameObject.tag.ToLower() == "enemy")
         {
+            var enemy = col.gameObject;
+
+            enemy.GetComponent<Rigidbody2D>().AddForce(new Vector2(12, 5), ForceMode2D.Impulse);
             Health--;
         }
     }
-
 
     protected override void OnUpdate()
     {
