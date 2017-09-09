@@ -14,14 +14,17 @@ public class PlayerWeapon : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            
+            Shoot();
         }
     }
 
 
-
-    public void Shoot()
+    private void Shoot()
     {
         var enemies = FindObjectOfType<Enemy>();
+        var bullet = Instantiate(LuckyBulletObject);
+        bullet.transform.position = transform.position + new Vector3(BulletStartOffset.x, BulletStartOffset.y);
+        bullet.Shoot();
+
     }
 }

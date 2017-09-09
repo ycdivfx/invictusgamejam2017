@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrazyBullet : BaseObject {
+public class CrazyBullet : BaseBullet
+{
+    protected override void OnShoot()
+    {
+        GetComponent<Rigidbody2D>().velocity = new Vector2(Speed, Speed / 2);
+    }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private void Update()
+    {
+        var deltaTime = (int) ((Time.time - m_startTime) % 0.5f);
+        if (deltaTime == 1)
+        {
+            //GetComponent<Rigidbody2D>().gravityScale =
+        }
+    }
 }
