@@ -87,7 +87,6 @@ public class PlayerController : BaseObject
     {
         m_bulletsFilter.SetLayerMask(EnemyBullets);
         m_bulletsFilter.useLayerMask = true;
-
         m_playerWeapon = GetComponent<PlayerWeapon>();
     }
 
@@ -106,11 +105,12 @@ public class PlayerController : BaseObject
     {
         if (col.gameObject.tag.ToLower() == "enemy")
         {
+            SoundManager.Instance.PlaySfx(SoundManager.Instance.HitChar);
             var enemy = col.gameObject;
-
             enemy.GetComponent<Rigidbody2D>().AddForce(new Vector2(12, 5), ForceMode2D.Impulse);
-            Health--;
-        }
+            Health -= 10;
+            enemy.GetComponent<Enemy>().Health -= 2;
+         }
     }
 
     protected override void OnUpdate()
