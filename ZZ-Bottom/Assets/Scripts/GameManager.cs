@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : Singleton<GameManager>
 {
     public List<Scene> Scenes;
+    public Text ScoreText;
     public int Score;
 
     public void Lost()
@@ -15,12 +17,12 @@ public class GameManager : Singleton<GameManager>
 
     public void NextLevel()
     {
-        
+
     }
 
     public void Win()
     {
-        
+
     }
 
     public void AddScore(BulletType enemyType)
@@ -40,5 +42,6 @@ public class GameManager : Singleton<GameManager>
                 Score += 20;
                 break;
         }
+        ScoreText.text = "Score: " + Score.ToString();
     }
 }

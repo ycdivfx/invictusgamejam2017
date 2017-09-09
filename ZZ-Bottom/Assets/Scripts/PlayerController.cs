@@ -12,9 +12,11 @@ public class PlayerController : BaseObject
     [SerializeField]
     private float m_health = 400f;
     public LayerMask EnemyBullets;
+    public LayerMask EnemyMask;
     public Vector2 DebugVelocity;
 
     private ContactFilter2D m_bulletsFilter;
+    private ContactFilter2D m_enemyFilter;
     private SpriteRenderer m_spriteRenderer;
     private Animator m_animator;
     private PlayerWeapon m_playerWeapon;
@@ -87,14 +89,32 @@ public class PlayerController : BaseObject
     {
         m_bulletsFilter.SetLayerMask(EnemyBullets);
         m_bulletsFilter.useLayerMask = true;
+
+        m_enemyFilter.SetLayerMask(EnemyMask);
+        m_enemyFilter.useLayerMask = true;
+
         m_playerWeapon = GetComponent<PlayerWeapon>();
     }
 
     protected override void OnFixedUpdate()
     {
         var collisions = m_rb2D.GetContacts(m_bulletsFilter);
-        collisions.ForEach(x => x.collider.gameObject.GetComponent<BaseBullet>().DoPlayer(this));
+        collisions.ForEach(x =>
+        {
+            SoundManager.Instance.PlaySfx(SoundManager.Instance.HitChar);
+            var bullet = x.collider.gameObject.GetComponent<BaseBullet>();
+            bullet.DoPlayer(this);
+        });
     }
+
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "enemy")
+        {
+            Health--;
+        }
+    }
+
 
     protected override void OnUpdate()
     {
@@ -103,4 +123,5 @@ public class PlayerController : BaseObject
         if (m_animator.GetBool("lucky") == isLucky) return;
         m_animator.SetBool("lucky", isLucky);
     }
+
 }
