@@ -271,16 +271,16 @@ MonoBehaviour:
   SweetDistance: 13
   Stats:
   - Probability:
-      Min: 0.9
+      Min: 0.95
       Max: 1.1
     Angle: 45
   - Probability:
-      Min: 0.8
-      Max: 0.9
+      Min: 0.75
+      Max: 0.95
     Angle: 0
   - Probability:
       Min: 0.2
-      Max: 0.8
+      Max: 0.75
     Angle: 25
   - Probability:
       Min: -0.1
@@ -335,7 +335,10 @@ MonoBehaviour:
   MaxJumps: 2
   MaxSpeed: 12
   JumpTakeOffSpeed: 20
-  Health: 400
+  m_health: 400
+  EnemyBullets:
+    serializedVersion: 2
+    m_Bits: 0
   DebugVelocity: {x: 0, y: 0}
 --- !u!114 &114882723745940532
 MonoBehaviour:
