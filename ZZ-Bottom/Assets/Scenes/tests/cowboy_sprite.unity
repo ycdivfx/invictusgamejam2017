@@ -149,7 +149,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -371,7 +371,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -468,7 +468,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -636,7 +636,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -1192,7 +1192,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -1866,7 +1866,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -1963,7 +1963,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -2118,7 +2118,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -2364,7 +2364,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -2550,7 +2550,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -2634,7 +2634,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -2744,7 +2744,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -3000,7 +3000,7 @@ MonoBehaviour:
   LuckyBulletObject: {fileID: 114590913321482644, guid: 8e24089b635696448af7d4121786b3ed,
     type: 2}
   CrazyBulletObject: {fileID: 0}
-  BulletStartOffset: {x: 0, y: 0}
+  BulletStartOffset: {x: 1.25, y: 0.25}
   Distance: 0
 --- !u!1 &1468914601
 GameObject:
@@ -3043,7 +3043,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -3211,7 +3211,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -3361,9 +3361,177 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 182235788}
+    m_ColliderPaths:
+    - - X: 203700016
+        Y: 10000000
+      - X: 183700016
+        Y: 10000000
+      - X: 183700016
+        Y: -10000000
+      - X: 203700016
+        Y: -10000000
+  - m_Collider: {fileID: 241943084}
+    m_ColliderPaths:
+    - - X: 103700008
+        Y: 10000000
+      - X: 83700008
+        Y: 10000000
+      - X: 83700008
+        Y: -10000000
+      - X: 103700008
+        Y: -10000000
+  - m_Collider: {fileID: 313845494}
+    m_ColliderPaths:
+    - - X: 183700016
+        Y: 10000000
+      - X: 163700016
+        Y: 10000000
+      - X: 163700016
+        Y: -10000000
+      - X: 183700016
+        Y: -10000000
+  - m_Collider: {fileID: 506671211}
+    m_ColliderPaths:
+    - - X: -56300000
+        Y: 10000000
+      - X: -76300000
+        Y: 10000000
+      - X: -76300000
+        Y: -10000000
+      - X: -56300000
+        Y: -10000000
+  - m_Collider: {fileID: 947308615}
+    m_ColliderPaths:
+    - - X: 223700016
+        Y: 10000000
+      - X: 203700016
+        Y: 10000000
+      - X: 203700016
+        Y: -10000000
+      - X: 223700016
+        Y: -10000000
+  - m_Collider: {fileID: 1004343525}
+    m_ColliderPaths:
+    - - X: 123700008
+        Y: 10000000
+      - X: 103700008
+        Y: 10000000
+      - X: 103700008
+        Y: -10000000
+      - X: 123700008
+        Y: -10000000
+  - m_Collider: {fileID: 1124776103}
+    m_ColliderPaths:
+    - - X: -76300000
+        Y: 10000000
+      - X: -96300000
+        Y: 10000000
+      - X: -96300000
+        Y: -10000000
+      - X: -76300000
+        Y: -10000000
+  - m_Collider: {fileID: 1425711126}
+    m_ColliderPaths:
+    - - X: 143700016
+        Y: 10000000
+      - X: 123700008
+        Y: 10000000
+      - X: 123700008
+        Y: -10000000
+      - X: 143700016
+        Y: -10000000
+  - m_Collider: {fileID: 1440058240}
+    m_ColliderPaths:
+    - - X: 23699998
+        Y: 10000000
+      - X: 3699998
+        Y: 10000000
+      - X: 3699998
+        Y: -10000000
+      - X: 23699998
+        Y: -10000000
+  - m_Collider: {fileID: 1450467574}
+    m_ColliderPaths:
+    - - X: -36300000
+        Y: 10000000
+      - X: -56300000
+        Y: 10000000
+      - X: -56300000
+        Y: -10000000
+      - X: -36300000
+        Y: -10000000
+  - m_Collider: {fileID: 1450589006}
+    m_ColliderPaths:
+    - - X: 63700004
+        Y: 10000000
+      - X: 43700004
+        Y: 10000000
+      - X: 43700004
+        Y: -10000000
+      - X: 63700004
+        Y: -10000000
+  - m_Collider: {fileID: 1468914603}
+    m_ColliderPaths:
+    - - X: 83700008
+        Y: 10000000
+      - X: 63700004
+        Y: 10000000
+      - X: 63700004
+        Y: -10000000
+      - X: 83700008
+        Y: -10000000
+  - m_Collider: {fileID: 1514176507}
+    m_ColliderPaths:
+    - - X: 163700016
+        Y: 10000000
+      - X: 143700016
+        Y: 10000000
+      - X: 143700016
+        Y: -10000000
+      - X: 163700016
+        Y: -10000000
+  - m_Collider: {fileID: 1648296995}
+    m_ColliderPaths:
+    - - X: -16299999
+        Y: 10000000
+      - X: -36300000
+        Y: 10000000
+      - X: -36300000
+        Y: -10000000
+      - X: -16299999
+        Y: -10000000
+  - m_Collider: {fileID: 1815888640}
+    m_ColliderPaths:
+    - - X: 3699998
+        Y: 10000000
+      - X: -16300001
+        Y: 10000000
+      - X: -16300001
+        Y: -10000000
+      - X: 3699998
+        Y: -10000000
+  - m_Collider: {fileID: 92238699}
+    m_ColliderPaths:
+    - - X: 43700000
+        Y: 10000000
+      - X: 23699998
+        Y: 10000000
+      - X: 23699998
+        Y: -10000000
+      - X: 43700000
+        Y: -10000000
   m_CompositePaths:
-    m_Paths: []
+    m_Paths:
+    - - {x: 4.3700004, y: -1}
+      - {x: 22.370003, y: -1}
+      - {x: 22.370003, y: 1}
+      - {x: 4.3700004, y: 1}
+    - - {x: -9.63, y: -1}
+      - {x: 4.37, y: -1}
+      - {x: 4.37, y: 1}
+      - {x: -9.63, y: 1}
   m_VertexDistance: 0.0005
 --- !u!50 &1608688794
 Rigidbody2D:
@@ -3413,7 +3581,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -3940,7 +4108,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
