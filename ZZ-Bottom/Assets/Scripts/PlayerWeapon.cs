@@ -7,9 +7,10 @@ public class PlayerWeapon : MonoBehaviour
     public LuckyBullet LuckyBulletObject;
     public LazyBullet LazyBulletObject;
     public CrazyBullet CrazyBulletObject;
+    public FireWorksBullet FireWorksBullet;
     public Vector2 BulletStartOffset;
 
-    public float SweetDistance;
+    public float Distance;
 
     private void FixedUpdate()
     {
@@ -23,7 +24,7 @@ public class PlayerWeapon : MonoBehaviour
     private void Shoot()
     {
         var enemies = FindObjectOfType<Enemy>();
-        var bullet = Instantiate(CrazyBulletObject);
+        var bullet = Instantiate(FireWorksBullet);
         bullet.transform.position = transform.position + new Vector3(BulletStartOffset.x, BulletStartOffset.y);
         bullet.Shoot();
 

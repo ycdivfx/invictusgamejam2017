@@ -12,16 +12,8 @@ public class LazyBullet : BaseBullet
     private void Update()
     {
         var deltaTime = (int)((Time.time - m_startTime) % 0.5f);
-        if (deltaTime == 1)
-        {
-            Debug.Log("true");
-            GetComponent<Rigidbody2D>().gravityScale = 0f;
-        }
-        else
-        {
-            Debug.Log("false");
+        if (deltaTime != 1)
             GetComponent<Rigidbody2D>().gravityScale = 10f;
-        }
 
     }
 }
