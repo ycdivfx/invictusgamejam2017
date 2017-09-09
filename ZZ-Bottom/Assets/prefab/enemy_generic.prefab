@@ -63,7 +63,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61485689850189224
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -122,10 +122,9 @@ MonoBehaviour:
   MaxJumps: 2
   Multipliers:
     Normal: 1
-    Water: 0
-    Air: 0
-    Fire: 0
-    Earth: 0
+    Gold: 0
+    Silver: 0
+    Bronze: 0
   m_health: 15
   Speed: {x: -2, y: 0}
   PlayerBullets:
