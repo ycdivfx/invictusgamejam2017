@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212453830065411888}
   - component: {fileID: 61219496978377882}
   - component: {fileID: 114329421378782078}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: PowerupGoldX2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
