@@ -1008,7 +1008,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetToFollow: {fileID: 1457044256}
-  Drag: 0.05
+  Drag: 0.1
 --- !u!1 &424225190
 GameObject:
   m_ObjectHideFlags: 0
@@ -2621,6 +2621,7 @@ GameObject:
   - component: {fileID: 1457044258}
   - component: {fileID: 1457044260}
   - component: {fileID: 1457044259}
+  - component: {fileID: 1457044261}
   m_Layer: 0
   m_Name: mainchar
   m_TagString: Untagged
@@ -2737,10 +2738,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinGroundNormalY: 0.65
-  GravityModifier: 1
+  GravityModifier: 5
   MaxJumps: 2
-  MaxSpeed: 7
-  JumpTakeOffSpeed: 7
+  MaxSpeed: 12
+  JumpTakeOffSpeed: 20
   Health: 400
   DebugVelocity: {x: 0, y: 0}
 --- !u!50 &1457044260
@@ -2754,7 +2755,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -2763,6 +2764,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1457044261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1457044254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e2ac25cee9bbf4ba03f332f46b5411, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LuckyBulletObject: {fileID: 0}
+  CrazyBulletObject: {fileID: 0}
+  BulletStartOffset: {x: 0, y: 0}
+  Distance: 0
 --- !u!1 &1468914601
 GameObject:
   m_ObjectHideFlags: 0
