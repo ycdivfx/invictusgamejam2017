@@ -43,6 +43,8 @@ public class PlayerWeapon : MonoBehaviour
         shotAngle = Random.Range(-1f, 1f) * 40f;
         index = Random.Range(0, CrazyBulletObject.Count - 1);
         closerEnemy = FindObjectsOfType<Enemy>().ToList().OrderBy(x => Vector2.Distance(x.transform.position, transform.position)).FirstOrDefault();
+
+
         if (closerEnemy != null && closerEnemy.transform.position.x > transform.position.x)
         {
             var enemyDistance = Vector2.Distance(closerEnemy.transform.position - new Vector3(0.5f, 0), transform.position + new Vector3(0.5f, 0));
@@ -51,8 +53,13 @@ public class PlayerWeapon : MonoBehaviour
             if (stat != null)
                 shotAngle = stat.Angle;
         }
+        bool isLuckShot = Math.Abs(shotAngle) < float.Epsilon;
+        if(isLuckShot)
+        {
+            Debug.Log("Luckshot");
+        }
+        var bullet = Instantiate(isLuckShot ? LuckyBullet : CrazyBulletObject[index]);
 
-        var bullet = Instantiate(Math.Abs(shotAngle) < float.Epsilon ? LuckyBullet : CrazyBulletObject[index]);
         bullet.GetComponent<SpriteRenderer>().sprite = NormalBullet;
         bullet.transform.position = transform.position + new Vector3(BulletStartOffset.x, BulletStartOffset.y);
         bullet.Damage = 1;
@@ -93,7 +100,7 @@ public class BulletStats
 
     public int InRange(float probability)
     {
-        var result = 0;
+        var result = -99;
         if (probability > Probability.Min && probability <= Probability.Max)
             result = 0;
         if (probability <= Probability.Min)
