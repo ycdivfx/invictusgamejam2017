@@ -13,6 +13,7 @@ public class Enemy : BaseObject
     public LayerMask PlayerBullets;
     public float TimeoutBeforeRemove = 2f;
     public int Score;
+    BulletType Type = BulletType.Normal;
 
     private SpriteRenderer m_spriteRenderer;
     private Animator m_animator;
@@ -29,7 +30,7 @@ public class Enemy : BaseObject
                 SoundManager.Instance.PlaySfx(SoundManager.Instance.DieEnemy);
                 Speed = 0;
                 DestroyObject(gameObject);
-               //GameManager.Instance.AddScore();
+                GameManager.Instance.AddScore(Type);
             }
         }
     }
