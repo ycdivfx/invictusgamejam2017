@@ -25,6 +25,7 @@ public class Enemy : BaseObject
             m_health = value;
             if (m_health <= 0)
             {
+                SoundManager.Instance.PlaySfx(SoundManager.Instance.DieEnemy);
                 Speed = 0;
                 DestroyObject(gameObject);
             }
@@ -55,8 +56,8 @@ public class Enemy : BaseObject
     protected override void OnFixedUpdate()
     {
         var collisions = m_rb2D.GetContacts(m_bulletsFilter);
+        if (collisions.Count == 0) return;
         collisions.ForEach(x => x.collider.gameObject.GetComponent<BaseBullet>().DoDamage(this));
-
-
+        SoundManager.Instance.PlaySfx(SoundManager.Instance.HitEnemy);
     }
 }
