@@ -23,8 +23,22 @@ public class GameManager : Singleton<GameManager>
         
     }
 
-    public void AddScore(int score)
+    public void AddScore(BulletType enemyType)
     {
-        
+        switch (enemyType)
+        {
+            case BulletType.Normal:
+                Score += 5;
+                break;
+            case BulletType.Bronze:
+                Score += 10;
+                break;
+            case BulletType.Silver:
+                Score += 15;
+                break;
+            case BulletType.Gold:
+                Score += 20;
+                break;
+        }
     }
 }
