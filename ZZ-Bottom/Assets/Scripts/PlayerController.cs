@@ -54,6 +54,6 @@ public class PlayerController : BaseObject {
         m_animator.SetFloat("velocityX", Mathf.Abs(m_velocity.x) / MaxSpeed);
 
         m_targetVelocity = move * MaxSpeed;
-        DebugVelocity = m_targetVelocity;
+        DebugVelocity = m_velocity;
     }
 }
