@@ -53,11 +53,11 @@ public class PlayerWeapon : MonoBehaviour
                 shotAngle = stat.Angle;
         }
         bool isLuckShot = Math.Abs(shotAngle) < float.Epsilon;
+
         if (isLuckShot)
-        {
-            Debug.Log("Luckshot");
-        }
-        shotAngle = isLuckShot ? shotAngle : Random.Range(-shotAngle, shotAngle);
+            SoundManager.Instance.PlaySfx(SoundManager.Instance.LuckyShot);
+        else
+            SoundManager.Instance.PlaySfx(SoundManager.Instance.Shoot); shotAngle = isLuckShot ? shotAngle : Random.Range(-shotAngle, shotAngle);
         var bullet = Instantiate(isLuckShot ? LuckyBullet : CrazyBulletObject[index]);
 
         bullet.GetComponent<SpriteRenderer>().sprite = NormalBullet;

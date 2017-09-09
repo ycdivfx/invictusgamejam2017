@@ -31,6 +31,7 @@ public class SoundManager : Singleton<SoundManager>
     public AudioClip PowerUp;
     public AudioClip Win;
     public AudioClip Lose;
+    public AudioClip LuckyShot;
 
     public void Start()
     {
