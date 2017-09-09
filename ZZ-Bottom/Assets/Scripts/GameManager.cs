@@ -42,6 +42,6 @@ public class GameManager : Singleton<GameManager>
                 Score += 20;
                 break;
         }
-        ScoreText.text = "Score: " + Score.ToString();
+        ScoreText.text = Score.ToString();
     }
 }
