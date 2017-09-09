@@ -11433,7 +11433,7 @@ MonoBehaviour:
   toggleMusic: {fileID: 1651545203}
   sliderMusic: {fileID: 1939271951}
   Music: {fileID: 8300000, guid: 7c39dd6568107ec47a082df325e1ef39, type: 3}
-  Shoot: {fileID: 8300000, guid: e2a9caf0c70b682439f9c4e27a58bc2d, type: 3}
+  Shoot: {fileID: 8300000, guid: 88c1eb80a261b3345922017b93c1e264, type: 3}
   HitChar: {fileID: 8300000, guid: 39821d4d1b917d34f96868beb745c594, type: 3}
   HitEnemy: {fileID: 8300000, guid: 31f64588a504fcf428ae801a04f13cd8, type: 3}
   DieEnemy: {fileID: 8300000, guid: 0d443dfa49c79244bb1aa7e0d7f489cb, type: 3}
