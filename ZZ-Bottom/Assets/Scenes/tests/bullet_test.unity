@@ -1081,6 +1081,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetToFollow: {fileID: 1457044256}
   Drag: 0.1
+  Buffer: 1
 --- !u!114 &374722907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3033,6 +3034,8 @@ MonoBehaviour:
   LazyBulletObject: {fileID: 114017856070306608, guid: f393820227263e04fb7abaf23d13b81c,
     type: 2}
   CrazyBulletObject: {fileID: 114540943957589010, guid: deb8fd0ae429cab42be9e08824fdc0b5,
+    type: 2}
+  FireWorksBullet: {fileID: 114040368808411586, guid: f5dfd0510b4770940a86f4dccfdccdb5,
     type: 2}
   BulletStartOffset: {x: 1.25, y: 0.25}
   Distance: 0
