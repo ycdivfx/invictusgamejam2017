@@ -102,6 +102,7 @@ MonoBehaviour:
   Damage: 4
   DestroyAfter: 2
   Speed: 20
+  Type: 0
 --- !u!212 &212666279970529138
 SpriteRenderer:
   m_ObjectHideFlags: 1

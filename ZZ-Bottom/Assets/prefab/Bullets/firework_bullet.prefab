@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61830104315456396}
   - component: {fileID: 50737386145689682}
   - component: {fileID: 114631880281534678}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: spark3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 61258898348774800}
   - component: {fileID: 50423400816402250}
   - component: {fileID: 114993528053200010}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: spark2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 61267516844362908}
   - component: {fileID: 50171593092339796}
   - component: {fileID: 114732645723216542}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: spark4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 61090464776074094}
   - component: {fileID: 50217337749903568}
   - component: {fileID: 114547157793481230}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: spark1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 61372866131585210}
   - component: {fileID: 50638593611600522}
   - component: {fileID: 114040368808411586}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: firework_bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 61505501527611044}
   - component: {fileID: 50520008829068590}
   - component: {fileID: 114615840300345296}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: spark5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,6 +492,7 @@ MonoBehaviour:
   Damage: 10
   DestroyAfter: 50000
   Speed: 10
+  Type: 0
   maxH: 8
 --- !u!114 &114547157793481230
 MonoBehaviour:
