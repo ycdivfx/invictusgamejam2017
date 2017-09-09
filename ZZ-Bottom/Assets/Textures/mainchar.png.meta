@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 3bee13c5944de1c428ca0c4199e5704a
-timeCreated: 1504974968
+timeCreated: 1504977800
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -147,8 +147,8 @@ TextureImporter:
         - {x: -58, y: -34}
         - {x: -57, y: -35}
         - {x: -38, y: -37}
-        - {x: -20.256012, y: -119.41867}
-        - {x: 7, y: -118}
+        - {x: -17.781982, y: -121.89267}
+        - {x: 7.8246765, y: -121.84848}
         - {x: 113.54669, y: -1.4186707}
         - {x: 114.96536, y: 21.418701}
       tessellationDetail: 0
@@ -160,8 +160,8 @@ TextureImporter:
         y: 12
         width: 256
         height: 244
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -172,9 +172,8 @@ TextureImporter:
         - {x: -58, y: 119}
         - {x: -59.41868, y: -33.709335}
         - {x: -38, y: -37}
-        - {x: -28, y: -117}
-        - {x: -27, y: -118}
-        - {x: 28, y: -118}
+        - {x: -33.61779, y: -122}
+        - {x: 28.33577, y: -122}
         - {x: 110.70935, y: -2}
         - {x: 113.54669, y: 20}
       tessellationDetail: 0
@@ -193,8 +192,8 @@ TextureImporter:
       physicsShape:
       - - {x: -39, y: 126}
         - {x: -50, y: 117}
-        - {x: -50, y: -118}
-        - {x: 11.802734, y: -119.41868}
+        - {x: -49.53952, y: -121.45377}
+        - {x: 9.269928, y: -122.5}
         - {x: 27.051147, y: -34.135536}
         - {x: 111.4187, y: -21.533112}
         - {x: 115.67468, y: 31.578278}
