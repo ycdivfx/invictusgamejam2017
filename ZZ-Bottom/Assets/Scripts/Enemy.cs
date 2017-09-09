@@ -7,13 +7,12 @@ public class Enemy : MonoBehaviour
     public DamageMultiplier Multipliers;
     public float Health = 100f;
 
-    // Use this for initialization
-    void Start()
-    {
-    }
+    private SpriteRenderer m_spriteRenderer;
+    private Animator m_animator;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
+        m_spriteRenderer = GetComponent<SpriteRenderer>();
+        m_animator = GetComponent<Animator>();
     }
 }

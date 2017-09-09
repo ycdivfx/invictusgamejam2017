@@ -6,6 +6,7 @@ public class PlayerController : BaseObject {
 
     public float MaxSpeed = 7;
     public float JumpTakeOffSpeed = 7;
+    public float Health = 400f;
 
     private SpriteRenderer m_spriteRenderer;
     private Animator m_animator;
