@@ -12694,7 +12694,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1792530289}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.68, y: -1.1, z: 0}
+  m_LocalPosition: {x: 16.37, y: -1.01, z: 0.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -12721,10 +12721,10 @@ MonoBehaviour:
     Fire: 0
     Earth: 0
   Health: 100
-  Speed: {x: 0, y: 0}
+  Speed: {x: -2, y: 0}
   PlayerBullets:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096
 --- !u!50 &1792530294
 Rigidbody2D:
   serializedVersion: 4
@@ -12757,7 +12757,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.6932678, y: -0.14462471}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -12768,7 +12768,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 4}
+  m_Size: {x: 2.6134644, y: 3.7107506}
   m_EdgeRadius: 0
 --- !u!1 &1813003648
 GameObject:

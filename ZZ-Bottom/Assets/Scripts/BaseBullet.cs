@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BaseBullet : MonoBehaviour
 {
-    public float Damage = 10f;
+    public float Damage = 1;
     public float DestroyAfter = 2f;
     public float Speed = 10f;
     protected float m_startTime;
@@ -25,5 +25,11 @@ public class BaseBullet : MonoBehaviour
         var lifeTime = Time.time - m_startTime;
         if(lifeTime > DestroyAfter)
             Destroy(gameObject);
+    }
+
+    public void DoDamage(Enemy enemy)
+    {
+        enemy.Health -= Damage;
+        Destroy(gameObject);
     }
 }

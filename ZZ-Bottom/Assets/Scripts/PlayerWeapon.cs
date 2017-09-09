@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerWeapon : MonoBehaviour
 {
     public LuckyBullet LuckyBulletObject;
-    public CrazyBullet CrazyBulletObject;
+    public List<CrazyBullet> CrazyBulletObject = new List<CrazyBullet>();
     public Vector2 BulletStartOffset;
 
     public float SweetDistance;
