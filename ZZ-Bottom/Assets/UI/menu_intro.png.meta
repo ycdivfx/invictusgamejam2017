@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 0308d5ba3d4c8fc49b44882cb09d4796
-timeCreated: 1504974386
+guid: bb1431afa03a06945b6a35f05cd3ec64
+timeCreated: 1504973788
 licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: enemy_generic_01_0
-    21300002: enemy_generic_01_1
+  fileIDToRecycleName: {}
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -41,13 +39,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -99,54 +97,7 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: enemy_generic_01_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 18.319885, y: 109.18146}
-        - {x: -35, y: 110}
-        - {x: -37.579735, y: 58.477173}
-        - {x: -92.77219, y: 45.41327}
-        - {x: -94, y: -18}
-        - {x: -10.600487, y: -35.653763}
-        - {x: -10, y: -110}
-        - {x: 34, y: -110}
-        - {x: 35.637085, y: 56.79457}
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: enemy_generic_01_1
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -38.98401, y: 55.72583}
-        - {x: -96.04636, y: 50.733826}
-        - {x: -92.77219, y: -16.262192}
-        - {x: -8.559753, y: -37.16883}
-        - {x: -5.068756, y: -113.274185}
-        - {x: 36.455658, y: -113.27418}
-        - {x: 34, y: 60}
-        - {x: 28, y: 106}
-        - {x: 14, y: 110}
-        - {x: -31.2742, y: 110.40927}
-      physicsShape: []
-      tessellationDetail: 0
+    sprites: []
     outline: []
     physicsShape: []
   spritePackingTag: 
