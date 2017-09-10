@@ -351,8 +351,8 @@ MonoBehaviour:
   AdjustPhysics: 0.1
   MaxSpeed: 12
   JumpTakeOffSpeed: 11
-  m_health: 100
-  MaxHealth: 100
+  m_health: 200
+  MaxHealth: 200
   EnemyBullets:
     serializedVersion: 2
     m_Bits: 0
