@@ -1,14 +1,19 @@
 fileFormatVersion: 2
 guid: 1026cb913c464064c8d2442af383ca31
-timeCreated: 1504957275
+timeCreated: 1505027009
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - m_audioSourceSFX: {instanceID: 0}
+  - toggleSFX: {instanceID: 0}
+  - sliderSFX: {instanceID: 0}
   - m_audioSourceMusic: {instanceID: 0}
-  - Music: {fileID: 8300000, guid: 7c39dd6568107ec47a082df325e1ef39, type: 3}
-  - Shoot: {fileID: 8300000, guid: e2a9caf0c70b682439f9c4e27a58bc2d, type: 3}
+  - toggleMusic: {instanceID: 0}
+  - sliderMusic: {instanceID: 0}
+  - GameMusic: {fileID: 8300000, guid: b2b22724aed34a741a6fc12468473a42, type: 3}
+  - MenuMusic: {fileID: 8300000, guid: 29cc8b033f7577d469c8ecbe9ac0d414, type: 3}
+  - Shoot: {fileID: 8300000, guid: 88c1eb80a261b3345922017b93c1e264, type: 3}
   - HitChar: {fileID: 8300000, guid: 39821d4d1b917d34f96868beb745c594, type: 3}
   - HitEnemy: {fileID: 8300000, guid: 31f64588a504fcf428ae801a04f13cd8, type: 3}
   - DieEnemy: {fileID: 8300000, guid: 0d443dfa49c79244bb1aa7e0d7f489cb, type: 3}
@@ -19,6 +24,7 @@ MonoImporter:
   - PowerUp: {fileID: 8300000, guid: 534699f147378b647916355823232df8, type: 3}
   - Win: {fileID: 8300000, guid: df3e58e1da0460b4289dbc465dacae0c, type: 3}
   - Lose: {fileID: 8300000, guid: b984b03ae565450469bfa1e46064eb9b, type: 3}
+  - LuckyShot: {fileID: 8300000, guid: 035345b86e76fd54d8d1752d61aa76ff, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
