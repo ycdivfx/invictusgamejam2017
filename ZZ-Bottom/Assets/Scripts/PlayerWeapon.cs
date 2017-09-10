@@ -116,10 +116,13 @@ public class PlayerWeapon : MonoBehaviour
             }
         }
 
+        var flip = !m_renderer.flipX;
+        var direction = flip ? 1 : -1;
+
         var bullet = Instantiate(isLuckShot ? LuckyBullet : CrazyBulletObject[index]);
 
         bullet.GetComponent<SpriteRenderer>().sprite = NormalBullet;
-        bullet.transform.position = transform.position + new Vector3(BulletStartOffset.x, BulletStartOffset.y);
+        bullet.transform.position = transform.position + new Vector3(direction * BulletStartOffset.x, BulletStartOffset.y);
         bullet.Damage = 1;
         bullet.Type = m_powerups.Use();
         switch (bullet.Type)
@@ -145,6 +148,7 @@ public class PlayerWeapon : MonoBehaviour
         }
         //bullet.transform.localScale = new Vector3(2,2,2);
         bullet.GetComponent<Rigidbody2D>().rotation = shotAngle;
+        bullet.Speed *= direction;
         bullet.Shoot(shotAngle);
     }
 
