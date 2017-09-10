@@ -26,6 +26,7 @@ public class PlayerPowerup : MonoBehaviour
         var powerup = ActivePowerup;
         powerup.NumberOfShoots--;
         if (powerup.NumberOfShoots == 0) ActivePowerup = null;
+        GameManager.Instance.AmmoCount(this);
         return powerup.Type;
     }
 }

@@ -6,6 +6,16 @@ using UnityEngine.UI;
 
 public class GameManager : Singleton<GameManager>
 {
+
+
+    [Header("Ammo")]
+    public HorizontalLayoutGroup AmmoLayout;
+    public GameObject AmmoDummy;
+    public Sprite GoldBullet;
+    public Sprite SilverBullet;
+    public Sprite BronzeBullet;
+
+    [Header(" ")]
     public List<string> Scenes;
     public Text ScoreText;
     public Image HPPlayer;
@@ -14,6 +24,7 @@ public class GameManager : Singleton<GameManager>
     public int Score;
     public int SceneIndex = 0;
     public float Timeout = 3f;
+
 
     public void PlayerHP(PlayerController player)
     {
@@ -24,6 +35,41 @@ public class GameManager : Singleton<GameManager>
     {
         HPEnemy.fillAmount = enemy.Health / enemy.MaxHealth;
         HPEnemyShield.fillAmount = enemy.PartsHealth();
+    }
+
+    public void AmmoCount(PlayerPowerup powerup)
+    {
+        var dttt = new List<GameObject>();
+        for (int i = 0; i < AmmoLayout.transform.childCount; i++)
+            dttt.Add(AmmoLayout.transform.GetChild(i).gameObject);
+        dttt.ForEach(Destroy);
+
+
+        var powerUps = new List<PowerUpData>();
+        powerUps.AddRange(powerup.Powerups.ToArray());
+        if (powerup.ActivePowerup != null && !powerUps.Contains(powerup.ActivePowerup))
+            powerUps.Add(powerup.ActivePowerup);
+        Debug.Log(powerUps.Count);
+        foreach (var item in powerUps)
+        {
+            Debug.Log("number of shoots " + item.NumberOfShoots);
+            for (int i = 1; i <= item.NumberOfShoots; i++)
+            {
+                GameObject obj = Instantiate(AmmoDummy, AmmoLayout.transform);
+                switch (item.Type)
+                {
+                    case BulletType.Gold:
+                        obj.GetComponent<Image>().sprite = GoldBullet;
+                        break;
+                    case BulletType.Silver:
+                        obj.GetComponent<Image>().sprite = SilverBullet;
+                        break;
+                    case BulletType.Bronze:
+                        obj.GetComponent<Image>().sprite = BronzeBullet;
+                        break;
+                }
+            }
+        }
     }
 
     public void Lost()

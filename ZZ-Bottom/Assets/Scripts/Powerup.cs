@@ -23,6 +23,8 @@ public class Powerup : MonoBehaviour
             var powerups = collision.gameObject.GetComponent<PlayerPowerup>();
             powerups.Powerups.Enqueue(this.Data);
             DestroyObject(gameObject);
+
+            GameManager.Instance.AmmoCount(powerups);
         }
     }
 
