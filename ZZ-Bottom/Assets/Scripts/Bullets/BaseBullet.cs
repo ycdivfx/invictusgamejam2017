@@ -36,9 +36,9 @@ public class BaseBullet : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void DoPlayer(PlayerController player)
-    {
-        player.Health -= Damage;
-        Destroy(gameObject);
-    }
+    //public void DoPlayer(PlayerController player)
+    //{
+    //    player.Health -= Damage;
+    //    //Destroy(gameObject);
+    //}
 }

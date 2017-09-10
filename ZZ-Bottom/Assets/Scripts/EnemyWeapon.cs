@@ -39,7 +39,6 @@ public class EnemyWeapon : MonoBehaviour
         var rate = 60f / BulletsPerMinute;
         if (deltaTime >= rate && Vector3.Distance(transform.position, m_player.transform.position) <= Distance)
         {
-            Debug.Log("Shooting.");
             if(Random.value >= 1 - Probability)
                 Shoot();
             m_lastShot = Time.time;

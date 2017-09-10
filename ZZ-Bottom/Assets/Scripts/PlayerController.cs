@@ -81,19 +81,6 @@ public class PlayerController : BaseObject
         Health = MaxHealth;
     }
 
-    protected override void OnFixedUpdate()
-    {
-        var collisions = m_rb2D.GetContacts(m_bulletsFilter);
-        if(collisions.Count == 0) return;
-        collisions.ForEach(x =>
-        {
-            SoundManager.Instance.PlaySfx(SoundManager.Instance.HitChar);
-            var bullet = x.collider.gameObject.GetComponent<BaseBullet>();
-            bullet.DoPlayer(this);
-        });
-        GameManager.Instance.PlayerHP(this);
-    }
-
     public void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag.ToLower() == "enemy")
@@ -103,9 +90,15 @@ public class PlayerController : BaseObject
             enemy.GetComponent<Rigidbody2D>().AddForce(new Vector2(12, 5), ForceMode2D.Impulse);
             Health -= 10;
             enemy.GetComponent<Enemy>().Health -= 2;
-            GameManager.Instance.PlayerHP(this);
-
         }
+        else if (col.gameObject.tag.ToLowerInvariant() == "enemy_bullet")
+        {
+            var bullet = col.gameObject.GetComponent<BaseBullet>();
+            Debug.LogFormat("Shoot player with damage {0}", bullet.Damage);
+            Health -= bullet.Damage;
+            Destroy(col.gameObject);
+        }
+        GameManager.Instance.PlayerHP(this);
     }
 
     protected override void OnUpdate()
