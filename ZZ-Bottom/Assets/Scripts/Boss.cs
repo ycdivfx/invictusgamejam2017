@@ -16,12 +16,20 @@ public class Boss : Enemy
         Parts = GetComponentsInChildren<BossPart>().ToList();
     }
 
+    protected override void OnHealth()
+    {
+        GameManager.Instance.Win();
+    }
+
     protected override void OnFixedUpdate()
     {
         var cols = m_rb2D.Cast(Vector2.down).Where(x => x.collider.gameObject.tag == "terrain").ToList();
-        var floatImpulse = cols.Count() != 0 && cols.OrderBy(x => x.distance).First().distance < FloatImpulseDistance;
-        if(floatImpulse)
+        var floatImpulse = cols.Count != 0 && cols.OrderBy(x => x.distance).First().distance < FloatImpulseDistance;
+        if (floatImpulse)
+        {
+            Debug.Log("Impulse boss");
             m_rb2D.AddForce(Vector2.up * Random.value * Speed, ForceMode2D.Impulse);
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D col)

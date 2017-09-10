@@ -148,13 +148,16 @@ MonoBehaviour:
     Bronze: 2
   m_health: 6
   MaxHealth: 6
-  Speed: 0.5
+  Score: 0
   PlayerBullets:
     serializedVersion: 2
     m_Bits: 4096
-  TimeoutBeforeRemove: 2
-  Score: 0
   Type: 0
+  Speed: 0.5
+  RandomJumps: 0
+  JumpProbability: 0.318
+  JumpEvery: 15
+  JumpForce: {x: 3, y: 8}
 --- !u!212 &212628982722152756
 SpriteRenderer:
   m_ObjectHideFlags: 1

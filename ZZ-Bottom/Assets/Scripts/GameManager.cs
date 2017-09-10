@@ -6,11 +6,13 @@ using UnityEngine.UI;
 
 public class GameManager : Singleton<GameManager>
 {
-    public List<Scene> Scenes;
+    public List<string> Scenes;
     public Text ScoreText;
     public Image HPPlayer;
     public Image HPEnemy;
     public int Score;
+    public int SceneIndex = 0;
+    public float Timeout = 3f;
 
     public void PlayerHP(PlayerController player)
     {
@@ -24,17 +26,38 @@ public class GameManager : Singleton<GameManager>
 
     public void Lost()
     {
-        Time.timeScale = 0;
         SoundManager.Instance.PlaySfx(SoundManager.Instance.Lose);
+        StartCoroutine(LostRoutine());
     }
+
     public void Win()
     {
         SoundManager.Instance.PlaySfx(SoundManager.Instance.Win);
+        StartCoroutine(WinRoutine());
+    }
+
+    private IEnumerator WinRoutine()
+    {
+        yield return new WaitForSeconds(Timeout);
         NextLevel();
     }
+
+    private IEnumerator LostRoutine()
+    {
+        yield return new WaitForSeconds(Timeout);
+        SceneManager.LoadScene("Menu");
+    }
+
     public void NextLevel()
     {
-
+        SceneIndex++;
+        if (SceneIndex < Scenes.Count)
+            SceneManager.LoadScene(Scenes[SceneIndex]);
+        else
+        {
+            SceneIndex = 0;
+            SceneManager.LoadScene("Menu");
+        }
     }
 
     public void AddScore(BulletType enemyType)
