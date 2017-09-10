@@ -50,4 +50,11 @@ public class Boss : Enemy
         Parts.Remove(bossPart);
         Destroy(bossPart.gameObject);
     }
+
+    public float PartsHealth()
+    {
+        var health = Parts.Sum(x => x.Health);
+        var maxHealth = Parts.Sum(x => x.MaxHealth);
+        return health / maxHealth;
+    }
 }

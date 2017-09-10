@@ -20,6 +20,7 @@ public class BossPart : MonoBehaviour
             {
                 transform.parent.GetComponent<Boss>().DestroyPart(this);
             }
+            GameManager.Instance.EnemyHP(transform.parent.GetComponent<Boss>());
         }
     }
 
