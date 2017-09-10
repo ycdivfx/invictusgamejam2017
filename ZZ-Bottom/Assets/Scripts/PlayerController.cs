@@ -97,7 +97,9 @@ public class PlayerController : BaseObject
             enemy.GetComponent<Rigidbody2D>().AddForce(new Vector2(12, 5), ForceMode2D.Impulse);
             Health -= 10;
             enemy.GetComponent<Enemy>().Health -= 2;
-         }
+            GameManager.Instance.PlayerHP(Health);
+
+        }
     }
 
     protected override void OnUpdate()
@@ -108,5 +110,4 @@ public class PlayerController : BaseObject
         if (willLucky == isLucky) return;
         m_animator.SetBool("lucky", isLucky);
     }
-
 }
