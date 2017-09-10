@@ -19,7 +19,8 @@ public class SoundManager : Singleton<SoundManager>
     public Slider sliderMusic;
 
     [Header("Sounds")]
-    public AudioClip Music;
+    public AudioClip GameMusic;
+    public AudioClip MenuMusic;
     public AudioClip Shoot;
     public AudioClip HitChar;
     public AudioClip HitEnemy;
@@ -33,10 +34,6 @@ public class SoundManager : Singleton<SoundManager>
     public AudioClip Lose;
     public AudioClip LuckyShot;
 
-    public void Start()
-    {
-        m_audioSourceMusic.clip = Music;
-    }
 
     public void PlaySfx(AudioClip clip)
     {
