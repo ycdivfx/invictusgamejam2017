@@ -223,13 +223,13 @@ MonoBehaviour:
     Angle: 45
     MinAngle: 40
   - Probability:
-      Min: 0.75
+      Min: 0.7
       Max: 0.95
     Angle: 0
     MinAngle: 0
   - Probability:
       Min: 0.2
-      Max: 0.75
+      Max: 0.7
     Angle: 25
     MinAngle: 80
   - Probability:
