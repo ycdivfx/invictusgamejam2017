@@ -13,14 +13,17 @@ public class GameManager : Singleton<GameManager>
     public void Lost()
     {
         Time.timeScale = 0;
-    }
-
-    public void NextLevel()
-    {
+        SoundManager.Instance.PlaySfx(SoundManager.Instance.Lose);
 
     }
 
     public void Win()
+    {
+        SoundManager.Instance.PlaySfx(SoundManager.Instance.Win);
+        NextLevel();
+    }
+
+    public void NextLevel()
     {
 
     }
