@@ -31,6 +31,7 @@ public class PlayerController : BaseObject
             if (m_health <= 0)
             {
                 GameManager.Instance.Lost();
+                Destroy(gameObject);
             }
         }
     }

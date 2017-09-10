@@ -9,6 +9,11 @@ public class BaseObject : MonoBehaviour
     public float GravityModifier = 1f;
     public int MaxJumps = 2;
 
+    [Header("Jumps")]
+    public bool NormalJumps;
+
+    public float AdjustPhysics = 0.1f;
+
     protected Vector2 m_targetVelocity;
     protected bool m_grounded;
     protected Vector2 m_groundNormal;
@@ -48,12 +53,12 @@ public class BaseObject : MonoBehaviour
 
     protected virtual void OnUpdate()
     {
-        
+
     }
 
     protected virtual void OnFixedUpdate()
     {
-        
+
     }
 
     protected virtual void ComputeVelocity()
@@ -79,7 +84,10 @@ public class BaseObject : MonoBehaviour
 
         Movement(move, false);
 
-        move = Vector2.up * deltaPosition.y;
+        if (NormalJumps)
+            move = Vector2.up * deltaPosition.y;
+        else
+            move = Vector2.up * m_velocity.y * AdjustPhysics;
 
         Movement(move, true);
     }

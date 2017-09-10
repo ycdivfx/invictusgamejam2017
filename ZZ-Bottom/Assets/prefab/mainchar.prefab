@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 50208889535867888}
   - component: {fileID: 114833263806078082}
   - component: {fileID: 114158485437863148}
+  - component: {fileID: 61477044326479698}
   m_Layer: 10
   m_Name: mainchar
   m_TagString: player
@@ -143,7 +144,7 @@ PolygonCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1930068548063286}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -193,6 +194,31 @@ PolygonCollider2D:
       - {x: -0.9284167, y: 0.18380451}
       - {x: -0.90625, y: -0.79213095}
       - {x: -0.50724745, y: -0.80572224}
+--- !u!61 &61477044326479698
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1930068548063286}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.32170796, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 3.828125}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 1
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.7464294, y: 3.828125}
+  m_EdgeRadius: 0
 --- !u!81 &81331865382756154
 AudioListener:
   m_ObjectHideFlags: 1
@@ -240,6 +266,9 @@ MonoBehaviour:
   CrazyBulletObject:
   - {fileID: 114540943957589010, guid: deb8fd0ae429cab42be9e08824fdc0b5, type: 2}
   BulletStartOffset: {x: 1.8, y: 0.25}
+  CooldownWhen: 5
+  CooldownTime: 2
+  DetectShoot: 1
   NormalBullet: {fileID: 21300000, guid: 0e37648e697e9624390526b2ddd3dfbd, type: 3}
   GoldBullet: {fileID: 21300000, guid: 63d0afc9e2cdbaf4483b390486a855cc, type: 3}
   SilverBullet: {fileID: 21300000, guid: bd67160e16718474f9c0f8e47f760fb4, type: 3}
@@ -274,6 +303,7 @@ MonoBehaviour:
   index: 0
   closerEnemy: {fileID: 0}
   prob: 0
+  IsCoolingDown: 0
 --- !u!114 &114729336118499968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -317,8 +347,10 @@ MonoBehaviour:
   MinGroundNormalY: 0.65
   GravityModifier: 5
   MaxJumps: 2
+  NormalJumps: 0
+  AdjustPhysics: 0.1
   MaxSpeed: 12
-  JumpTakeOffSpeed: 20
+  JumpTakeOffSpeed: 11
   m_health: 400
   MaxHealth: 400
   EnemyBullets:
@@ -336,9 +368,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff50455cf550eec41915d09bbb90d070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetToFollow: {fileID: 4383822836278662}
-  Drag: 0.1
-  Buffer: 1
+  interpVelocity: 0
+  minDistance: 0
+  followDistance: 0
+  target: {fileID: 1930068548063286}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!124 &124527676213672722
 Behaviour:
   m_ObjectHideFlags: 1
