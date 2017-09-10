@@ -84,12 +84,14 @@ public class PlayerController : BaseObject
     protected override void OnFixedUpdate()
     {
         var collisions = m_rb2D.GetContacts(m_bulletsFilter);
+        if(collisions.Count == 0) return;
         collisions.ForEach(x =>
         {
             SoundManager.Instance.PlaySfx(SoundManager.Instance.HitChar);
             var bullet = x.collider.gameObject.GetComponent<BaseBullet>();
             bullet.DoPlayer(this);
         });
+        GameManager.Instance.PlayerHP(this);
     }
 
     public void OnCollisionEnter2D(Collision2D col)

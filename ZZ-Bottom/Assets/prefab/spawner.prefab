@@ -56,11 +56,15 @@ MonoBehaviour:
   Variance: 2
   Enemies:
   - {fileID: 114740799181429186, guid: ec5ce3df7767e8a439126f2a425a68ef, type: 2}
-  PlayerDistance: 50
-  OffscreenBuffer: 0.1
   Velocity: 10
   VelocityVariance: 5
+  WeaponDistance: 15
+  BulletsPerMinute: 30
+  WeaponProbability: 0.5
+  PlayerDistance: 50
+  OffscreenBuffer: 0.1
   Active: 1
+  ShowGizmo: 0
 --- !u!212 &212523443013461348
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -98,6 +98,13 @@ public class PlayerWeapon : MonoBehaviour
         }
         return null;
     }
+
+    private void OnDrawGizmos()
+    {
+        //if (!ShowGizmo) return;
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawSphere(transform.position + new Vector3(BulletStartOffset.x, BulletStartOffset.y), 0.25f);
+    }
 }
 
 [Serializable]
