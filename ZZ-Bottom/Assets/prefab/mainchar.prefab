@@ -42,11 +42,11 @@ GameObject:
   - component: {fileID: 4383822836278662}
   - component: {fileID: 212891705589136606}
   - component: {fileID: 95018396864448170}
-  - component: {fileID: 61754053957024334}
+  - component: {fileID: 60155651969999220}
+  - component: {fileID: 114792810982691152}
   - component: {fileID: 50208889535867888}
   - component: {fileID: 114833263806078082}
   - component: {fileID: 114158485437863148}
-  - component: {fileID: 114792810982691152}
   m_Layer: 10
   m_Name: mainchar
   m_TagString: player
@@ -137,8 +137,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!61 &61754053957024334
-BoxCollider2D:
+--- !u!60 &60155651969999220
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -149,7 +149,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.350291, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -159,9 +159,40 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 1
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.8353214, y: 4}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.4721136, y: -1.9140625}
+      - {x: 0.38570666, y: -1.9140625}
+      - {x: 0.41090846, y: -0.6104336}
+      - {x: 0.33288932, y: -0.08001709}
+      - {x: 0.795151, y: -0.4191594}
+      - {x: 1.0880892, y: -0.42734003}
+      - {x: 1.201518, y: -0.17262459}
+      - {x: 1.2483273, y: -0.009113789}
+      - {x: 1.7074876, y: -0.021535397}
+      - {x: 1.6973035, y: 0.22321701}
+      - {x: 1.1142614, y: 0.21144295}
+      - {x: 1.012815, y: 0.32374573}
+      - {x: 0.7598014, y: 0.3307948}
+      - {x: 0.76115966, y: 0.16872025}
+      - {x: 0.8442793, y: 0.07741499}
+      - {x: 0.7630286, y: 0.010070324}
+      - {x: 0.32016873, y: 0.39018774}
+      - {x: 0.31477165, y: 1.2687545}
+      - {x: 0.6836114, y: 1.3447642}
+      - {x: 0.66411114, y: 1.6549778}
+      - {x: 0.2990737, y: 1.6723485}
+      - {x: 0.25385904, y: 1.8732872}
+      - {x: -0.4141569, y: 1.8637624}
+      - {x: -0.43807518, y: 1.6680536}
+      - {x: -0.7742983, y: 1.6854877}
+      - {x: -0.7851821, y: 1.4255061}
+      - {x: -0.4649576, y: 1.0231419}
+      - {x: -0.6971271, y: 0.92964125}
+      - {x: -0.6556269, y: 0.6093826}
+      - {x: -0.9284167, y: 0.18380451}
+      - {x: -0.90625, y: -0.79213095}
+      - {x: -0.50724745, y: -0.80572224}
 --- !u!81 &81331865382756154
 AudioListener:
   m_ObjectHideFlags: 1
@@ -220,21 +251,25 @@ MonoBehaviour:
       Max: 1.1
     Angle: 45
     MinAngle: 40
+    UseNegative: 0
   - Probability:
       Min: 0.7
       Max: 0.95
     Angle: 0
     MinAngle: 0
+    UseNegative: 0
   - Probability:
-      Min: 0.2
+      Min: 0.35
       Max: 0.7
     Angle: 45
     MinAngle: 80
+    UseNegative: 0
   - Probability:
       Min: -0.1
-      Max: 0.2
+      Max: 0.35
     Angle: 90
     MinAngle: 89
+    UseNegative: 0
   shotAngle: 0
   index: 0
   closerEnemy: {fileID: 0}
@@ -284,8 +319,8 @@ MonoBehaviour:
   MaxJumps: 2
   MaxSpeed: 12
   JumpTakeOffSpeed: 20
-  m_health: 100
-  MaxHealth: 100
+  m_health: 400
+  MaxHealth: 400
   EnemyBullets:
     serializedVersion: 2
     m_Bits: 0
