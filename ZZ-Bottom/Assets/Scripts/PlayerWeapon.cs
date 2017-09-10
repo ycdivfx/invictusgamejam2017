@@ -10,6 +10,10 @@ public class PlayerWeapon : MonoBehaviour
     public BaseBullet LuckyBullet;
     public List<BaseBullet> CrazyBulletObject = new List<BaseBullet>();
     public Vector2 BulletStartOffset;
+    [Header("Weapon")]
+    public float CooldownWhen = 5f;
+    public float CooldownTime = 2f;
+    public float DetectShoot = 1f;
     [Header("Graphics")]
     public Sprite NormalBullet;
     public Sprite GoldBullet;
@@ -22,8 +26,14 @@ public class PlayerWeapon : MonoBehaviour
     public int index;
     public Enemy closerEnemy;
     public float prob;
+    public bool IsCoolingDown;
 
     private PlayerPowerup m_powerups;
+    private bool m_shoot = false;
+    private float m_lastShootTime;
+    private float m_shootStartTime;
+    private float m_cooldownStartTime;
+    private bool m_allowShoots = true;
 
     private void Awake()
     {
@@ -33,8 +43,38 @@ public class PlayerWeapon : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        var time = Time.time;
+        if (Input.GetButtonDown("Fire1") && m_allowShoots)
+        {
             Shoot();
+            m_lastShootTime = time;
+            if (!m_shoot)
+            {
+                Debug.Log("Shot start rate");
+                m_shoot = true;
+                m_shootStartTime = time;
+            }
+        }
+        else if (time - m_lastShootTime > DetectShoot && m_allowShoots)
+        {
+            Debug.Log("Shot end rate");
+            m_shoot = false;
+        }
+
+        if (m_shoot && time - m_shootStartTime >= CooldownWhen && m_allowShoots)
+        {
+            Debug.Log("Cooldown start");
+            IsCoolingDown = true;
+            m_cooldownStartTime = time;
+            m_allowShoots = false;
+        }
+        if (!m_allowShoots && time - m_cooldownStartTime >= CooldownTime)
+        {
+            Debug.Log("Cooldown end");
+            IsCoolingDown = false;
+            m_allowShoots = true;
+            m_shoot = false;
+        }
     }
 
 

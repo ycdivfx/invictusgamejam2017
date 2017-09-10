@@ -21988,6 +21988,36 @@ Prefab:
       propertyPath: EnemyBullets.m_Bits
       value: 16384
       objectReference: {fileID: 0}
+    - target: {fileID: 114158485437863148, guid: fc1cae64ebfd5a4419f961cb10f784db,
+        type: 2}
+      propertyPath: Stats.Array.data[0].UseNegative
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114158485437863148, guid: fc1cae64ebfd5a4419f961cb10f784db,
+        type: 2}
+      propertyPath: Stats.Array.data[3].UseNegative
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114158485437863148, guid: fc1cae64ebfd5a4419f961cb10f784db,
+        type: 2}
+      propertyPath: Stats.Array.data[3].Probability.Max
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 114158485437863148, guid: fc1cae64ebfd5a4419f961cb10f784db,
+        type: 2}
+      propertyPath: Stats.Array.data[2].Probability.Min
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 114158485437863148, guid: fc1cae64ebfd5a4419f961cb10f784db,
+        type: 2}
+      propertyPath: Stats.Array.data[1].UseNegative
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114158485437863148, guid: fc1cae64ebfd5a4419f961cb10f784db,
+        type: 2}
+      propertyPath: Stats.Array.data[2].UseNegative
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc1cae64ebfd5a4419f961cb10f784db, type: 2}
   m_IsPrefabParent: 0
