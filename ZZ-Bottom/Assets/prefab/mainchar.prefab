@@ -284,7 +284,8 @@ MonoBehaviour:
   MaxJumps: 2
   MaxSpeed: 12
   JumpTakeOffSpeed: 20
-  m_health: 400
+  m_health: 100
+  MaxHealth: 100
   EnemyBullets:
     serializedVersion: 2
     m_Bits: 0
