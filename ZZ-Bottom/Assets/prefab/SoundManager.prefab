@@ -359,8 +359,8 @@ MonoBehaviour:
   m_audioSourceMusic: {fileID: 82122547618994762}
   toggleMusic: {fileID: 0}
   sliderMusic: {fileID: 0}
-  GameMusic: {fileID: 0}
-  MenuMusic: {fileID: 0}
+  GameMusic: {fileID: 8300000, guid: b2b22724aed34a741a6fc12468473a42, type: 3}
+  MenuMusic: {fileID: 8300000, guid: 29cc8b033f7577d469c8ecbe9ac0d414, type: 3}
   Shoot: {fileID: 8300000, guid: 88c1eb80a261b3345922017b93c1e264, type: 3}
   HitChar: {fileID: 8300000, guid: 39821d4d1b917d34f96868beb745c594, type: 3}
   HitEnemy: {fileID: 8300000, guid: 31f64588a504fcf428ae801a04f13cd8, type: 3}
