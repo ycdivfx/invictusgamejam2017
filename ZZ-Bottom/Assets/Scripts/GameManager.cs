@@ -10,6 +10,7 @@ public class GameManager : Singleton<GameManager>
     public Text ScoreText;
     public Image HPPlayer;
     public Image HPEnemy;
+    public Image HPEnemyShield;
     public int Score;
     public int SceneIndex = 0;
     public float Timeout = 3f;
@@ -19,9 +20,10 @@ public class GameManager : Singleton<GameManager>
         HPPlayer.fillAmount = player.Health / player.MaxHealth;
     }
 
-    public void EnemyHP(Enemy enemy)
+    public void EnemyHP(Boss enemy)
     {
         HPEnemy.fillAmount = enemy.Health / enemy.MaxHealth;
+        HPEnemyShield.fillAmount = enemy.PartsHealth();
     }
 
     public void Lost()
