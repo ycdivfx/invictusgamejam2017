@@ -55,7 +55,11 @@ public class PlayerWeapon : MonoBehaviour
         if (!isLuckShot)
         {
             if (stat == null) shotAngle = Random.Range(-shotAngle, shotAngle);
-            else shotAngle = Random.Range(stat.MinAngle, shotAngle) * (stat.UseNegative ? (Random.value > 0.5 ? 1f : -1f) : 1f);
+            else
+            {
+                var neg = stat.UseNegative ? (Random.Range(0, 2) == 0 ? 1f : -1f) : 1f;
+                shotAngle = Random.Range(stat.MinAngle, shotAngle) * neg;
+            }
         }
 
         var bullet = Instantiate(isLuckShot ? LuckyBullet : CrazyBulletObject[index]);
