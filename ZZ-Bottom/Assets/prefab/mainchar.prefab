@@ -251,7 +251,7 @@ MonoBehaviour:
       Max: 1.1
     Angle: 45
     MinAngle: 40
-    UseNegative: 0
+    UseNegative: 1
   - Probability:
       Min: 0.7
       Max: 0.95
@@ -259,17 +259,17 @@ MonoBehaviour:
     MinAngle: 0
     UseNegative: 0
   - Probability:
-      Min: 0.35
+      Min: 0.4
       Max: 0.7
     Angle: 45
     MinAngle: 80
-    UseNegative: 0
+    UseNegative: 1
   - Probability:
       Min: -0.1
-      Max: 0.35
+      Max: 0.4
     Angle: 90
     MinAngle: 89
-    UseNegative: 0
+    UseNegative: 1
   shotAngle: 0
   index: 0
   closerEnemy: {fileID: 0}
