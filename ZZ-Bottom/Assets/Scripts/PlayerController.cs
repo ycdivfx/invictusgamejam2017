@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using zzbottom.helpers;
 
@@ -31,7 +32,9 @@ public class PlayerController : BaseObject
             if (m_health <= 0)
             {
                 GameManager.Instance.Lost();
-                Destroy(gameObject);
+                //GameObject.FindGameObjectsWithTag("enemy").ToList().ForEach(Destroy);
+                //GameObject.FindGameObjectsWithTag("boss").ToList().ForEach(Destroy);
+                //Destroy(gameObject);
             }
         }
     }

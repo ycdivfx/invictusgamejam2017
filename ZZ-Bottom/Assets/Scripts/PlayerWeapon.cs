@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -34,11 +35,21 @@ public class PlayerWeapon : MonoBehaviour
     private float m_shootStartTime;
     private float m_cooldownStartTime;
     private bool m_allowShoots = true;
+    private SpriteRenderer m_renderer;
+    private Sequence m_seq;
 
     private void Awake()
     {
         m_powerups = GetComponent<PlayerPowerup>();
+        m_renderer = GetComponent<SpriteRenderer>();
         if (!m_powerups) m_powerups = gameObject.AddComponent<PlayerPowerup>();
+
+        //m_seq = DOTween.Sequence();
+        //m_seq.Append(m_renderer.DOFade(0.5f, 1f / CooldownTime));
+        //m_seq.Append(m_renderer.DOFade(1f, 1f / CooldownTime));
+        //m_seq.SetLoops(-1, LoopType.Yoyo);
+        //m_seq.Kill();
+
     }
 
     private void Update()
@@ -62,16 +73,23 @@ public class PlayerWeapon : MonoBehaviour
         if (m_shoot && time - m_shootStartTime >= CooldownWhen && m_allowShoots)
         {
             IsCoolingDown = true;
+            m_seq = DOTween.Sequence();
+            m_seq.Append(m_renderer.DOFade(0.5f, 0.2f));
+            m_seq.Append(m_renderer.DOFade(1f, 0.2f));
+            m_seq.SetLoops(-1, LoopType.Yoyo);
+            m_seq.Play();
             m_cooldownStartTime = time;
             m_allowShoots = false;
         }
         if (!m_allowShoots && time - m_cooldownStartTime >= CooldownTime)
         {
+            m_seq.Kill(true);
             IsCoolingDown = false;
             m_allowShoots = true;
             m_shoot = false;
         }
     }
+
 
 
     private void Shoot()
