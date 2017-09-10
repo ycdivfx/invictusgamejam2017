@@ -8,21 +8,30 @@ public class GameManager : Singleton<GameManager>
 {
     public List<Scene> Scenes;
     public Text ScoreText;
+    public Image HPPlayer;
+    public Image HPEnemy;
     public int Score;
+
+    public void PlayerHP(float currentHP)
+    {
+        HPPlayer.fillAmount = currentHP / 100;
+    }
+
+    public void EnemyHP(float currentHP)
+    {
+        HPEnemy.fillAmount = currentHP / 100;
+    }
 
     public void Lost()
     {
         Time.timeScale = 0;
         SoundManager.Instance.PlaySfx(SoundManager.Instance.Lose);
-
     }
-
     public void Win()
     {
         SoundManager.Instance.PlaySfx(SoundManager.Instance.Win);
         NextLevel();
     }
-
     public void NextLevel()
     {
 
