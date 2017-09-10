@@ -208,9 +208,7 @@ MonoBehaviour:
     type: 2}
   CrazyBulletObject:
   - {fileID: 114540943957589010, guid: deb8fd0ae429cab42be9e08824fdc0b5, type: 2}
-  - {fileID: 114017856070306608, guid: f393820227263e04fb7abaf23d13b81c, type: 2}
-  - {fileID: 114300699360949106, guid: 5c5d9bc02e3054a469acc3080f663335, type: 2}
-  BulletStartOffset: {x: 1.25, y: 0.25}
+  BulletStartOffset: {x: 1.8, y: 0.25}
   NormalBullet: {fileID: 21300000, guid: 0e37648e697e9624390526b2ddd3dfbd, type: 3}
   GoldBullet: {fileID: 21300000, guid: 63d0afc9e2cdbaf4483b390486a855cc, type: 3}
   SilverBullet: {fileID: 21300000, guid: bd67160e16718474f9c0f8e47f760fb4, type: 3}
@@ -230,7 +228,7 @@ MonoBehaviour:
   - Probability:
       Min: 0.2
       Max: 0.7
-    Angle: 25
+    Angle: 45
     MinAngle: 80
   - Probability:
       Min: -0.1
