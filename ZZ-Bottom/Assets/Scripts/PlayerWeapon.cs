@@ -50,27 +50,23 @@ public class PlayerWeapon : MonoBehaviour
             m_lastShootTime = time;
             if (!m_shoot)
             {
-                Debug.Log("Shot start rate");
                 m_shoot = true;
                 m_shootStartTime = time;
             }
         }
         else if (time - m_lastShootTime > DetectShoot && m_allowShoots)
         {
-            Debug.Log("Shot end rate");
             m_shoot = false;
         }
 
         if (m_shoot && time - m_shootStartTime >= CooldownWhen && m_allowShoots)
         {
-            Debug.Log("Cooldown start");
             IsCoolingDown = true;
             m_cooldownStartTime = time;
             m_allowShoots = false;
         }
         if (!m_allowShoots && time - m_cooldownStartTime >= CooldownTime)
         {
-            Debug.Log("Cooldown end");
             IsCoolingDown = false;
             m_allowShoots = true;
             m_shoot = false;

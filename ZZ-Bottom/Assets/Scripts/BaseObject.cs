@@ -18,16 +18,17 @@ public class BaseObject : MonoBehaviour
     protected RaycastHit2D[] m_hitBuffer = new RaycastHit2D[16];
     protected List<RaycastHit2D> m_hitBufferList = new List<RaycastHit2D>(16);
     protected int m_jumps;
+    protected bool m_runFixed = true;
 
     protected const float MinMoveDistance = 0.001f;
     protected const float ShellRadius = 0.01f;
 
-    private void OnEnable()
+    protected void OnEnable()
     {
         m_rb2D = GetComponent<Rigidbody2D>();
     }
 
-    private void Start()
+    protected void Start()
     {
         m_contactFilter.useTriggers = false;
         m_contactFilter.SetLayerMask(Physics2D.GetLayerCollisionMask(gameObject.layer));
@@ -35,7 +36,7 @@ public class BaseObject : MonoBehaviour
         OnStart();
     }
 
-    private void Update()
+    protected void Update()
     {
         m_targetVelocity = Vector2.zero;
         ComputeVelocity();
@@ -59,9 +60,11 @@ public class BaseObject : MonoBehaviour
     {
     }
 
-    private void FixedUpdate()
+    protected void FixedUpdate()
     {
         OnFixedUpdate();
+
+        if (!m_runFixed) return;
 
         m_velocity += GravityModifier * Physics2D.gravity * Time.deltaTime;
         m_velocity.x = m_targetVelocity.x;

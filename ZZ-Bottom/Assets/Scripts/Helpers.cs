@@ -8,6 +8,16 @@ namespace zzbottom.helpers
 {
     public static class Rigibody2DExtensions
     {
+        public static List<RaycastHit2D> Cast(this Rigidbody2D @this, Vector2 direction)
+        {
+            var result = new List<RaycastHit2D>();
+            var collisions = new RaycastHit2D[32];
+            var count = @this.Cast(direction, collisions);
+            for (var i = 0; i < count; i++)
+                result.Add(collisions[i]);
+            return result;
+        }
+
         public static List<ContactPoint2D> GetContacts(this Rigidbody2D @this)
         {
             var result = new List<ContactPoint2D>();

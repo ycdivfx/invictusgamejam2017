@@ -8,6 +8,7 @@ TagManager:
   - player
   - enemy
   - enemy_bullet
+  - terrain
   layers:
   - Default
   - TransparentFX
