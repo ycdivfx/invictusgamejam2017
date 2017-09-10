@@ -47,7 +47,6 @@ public class PlayerController : BaseObject
         if (Input.GetButtonDown("Horizontal"))
         {
             SoundManager.Instance.PlaySfx(SoundManager.Instance.Walk);
-            Debug.Log("Move");
         }
 
         if (Input.GetButtonDown("Jump") && m_grounded)
