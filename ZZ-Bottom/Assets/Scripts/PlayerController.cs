@@ -84,6 +84,12 @@ public class PlayerController : BaseObject
             m_jumps++;
         }
 
+        //bool flipSprite = (m_spriteRenderer.flipX ? (move.x > 0.0f) : (move.x < 0.0f));
+        //if (flipSprite && move.x != 0)
+        //{
+        //    m_spriteRenderer.flipX = !m_spriteRenderer.flipX;
+        //}
+
         m_animator.SetBool("grounded", m_grounded);
         m_animator.SetFloat("velocityX", Mathf.Abs(m_velocity.x) / MaxSpeed);
 
@@ -105,7 +111,14 @@ public class PlayerController : BaseObject
         {
             SoundManager.Instance.PlaySfx(SoundManager.Instance.HitChar);
             var enemy = col.gameObject;
-            enemy.GetComponent<Rigidbody2D>().AddForce(new Vector2(12, 5), ForceMode2D.Impulse);
+            var rbd = enemy.GetComponent<Rigidbody2D>();
+            if (m_grounded && m_rb2D.velocity.y < 0)
+            {
+                enemy.layer = LayerMask.NameToLayer("EnemiesTemp");
+                enemy.GetComponent<Enemy>().StartCoroutine(SetEnemyToLayer(enemy, "Enemy", 3f));
+            }
+                //Physics2D.IgnoreCollision(m_rb2D.col, rbd);
+            rbd.AddForce(new Vector2(12, 5), ForceMode2D.Impulse);
             Health -= 10;
             enemy.GetComponent<Enemy>().Health -= 2;
         }
@@ -117,6 +130,13 @@ public class PlayerController : BaseObject
             Destroy(col.gameObject);
         }
         GameManager.Instance.PlayerHP(this);
+    }
+
+    private IEnumerator SetEnemyToLayer(GameObject enemy, string layer, float cooldown)
+    {
+        yield return new WaitForSeconds(cooldown);
+        enemy.layer = LayerMask.NameToLayer("Player");
+
     }
 
     protected override void OnUpdate()
