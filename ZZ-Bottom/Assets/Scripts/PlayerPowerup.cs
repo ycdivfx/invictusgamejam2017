@@ -7,15 +7,8 @@ public class PlayerPowerup : MonoBehaviour
 {
     public Queue<PowerUpData> Powerups = new Queue<PowerUpData>();
     public PowerUpData ActivePowerup;
-    private Rigidbody2D m_rb2D;
     public LayerMask PowerupLayer;
     private ContactFilter2D m_powerupFilter;
-
-
-    private void Awake()
-    {
-        m_rb2D = GetComponent<Rigidbody2D>();
-    }
 
     private void Start()
     {
