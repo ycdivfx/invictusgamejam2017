@@ -52,7 +52,11 @@ public class PlayerWeapon : MonoBehaviour
 
         SoundManager.Instance.PlaySfx(isLuckShot ? SoundManager.Instance.LuckyShot : SoundManager.Instance.Shoot);
 
-        shotAngle = isLuckShot ? shotAngle : Random.Range(stat == null ? -shotAngle : stat.MinAngle, shotAngle);
+        if (!isLuckShot)
+        {
+            if (stat == null) shotAngle = Random.Range(-shotAngle, shotAngle);
+            else shotAngle = Random.Range(stat.MinAngle, shotAngle) * (stat.UseNegative ? (Random.value > 0.5 ? 1f : -1f) : 1f);
+        }
 
         var bullet = Instantiate(isLuckShot ? LuckyBullet : CrazyBulletObject[index]);
 
@@ -113,6 +117,7 @@ public class BulletStats
     public BulletProblability Probability;
     public float Angle = 0f;
     public float MinAngle = 0f;
+    public bool UseNegative;
 
     public int InRange(float probability)
     {
