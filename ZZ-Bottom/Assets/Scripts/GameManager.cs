@@ -23,7 +23,7 @@ public class GameManager : Singleton<GameManager>
     public void EnemyHP(Boss enemy)
     {
         HPEnemy.fillAmount = enemy.Health / enemy.MaxHealth;
-        HPEnemy.fillAmount = enemy.PartsHealth();
+        HPEnemyShield.fillAmount = enemy.PartsHealth();
     }
 
     public void Lost()
