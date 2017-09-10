@@ -8,5 +8,8 @@ public class Killswitch : MonoBehaviour {
 	{
 		if (colObj.gameObject.tag.ToLower() == "enemy")
 			Destroy(colObj.gameObject);
-	}
+	    if (colObj.gameObject.tag.ToLower().Contains("bullet"))
+	        Destroy(colObj.gameObject);
+
+    }
 }
