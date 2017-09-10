@@ -56,25 +56,13 @@ public class PlayerController : BaseObject
             m_velocity.y = JumpTakeOffSpeed;
             m_jumps++;
         }
-        //else if (Input.GetButtonUp("Jump"))
-        //{
-        //    if (m_velocity.y > 0)
-        //    {
-        //        m_velocity.y = m_velocity.y * 0.5f;
-        //    }
-        //}
+
         if (Input.GetButtonDown("Jump") && !m_grounded && m_jumps < MaxJumps)
         {
             SoundManager.Instance.PlaySfx(SoundManager.Instance.Jump);
             m_velocity.y += JumpTakeOffSpeed;
             m_jumps++;
         }
-
-        //bool flipSprite = (m_spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < 0.01f));
-        //if (flipSprite)
-        //{
-        //    m_spriteRenderer.flipX = !m_spriteRenderer.flipX;
-        //}
 
         m_animator.SetBool("grounded", m_grounded);
         m_animator.SetFloat("velocityX", Mathf.Abs(m_velocity.x) / MaxSpeed);
@@ -117,7 +105,8 @@ public class PlayerController : BaseObject
     {
         var stats = m_playerWeapon.CheckLuckyShot();
         var isLucky = stats != null && Math.Abs(stats.Angle) < float.Epsilon;
-        if (m_animator.GetBool("lucky") == isLucky) return;
+		var willLucky = m_animator.GetBool ("lucky");
+        if (willLucky == isLucky) return;
         m_animator.SetBool("lucky", isLucky);
     }
 
