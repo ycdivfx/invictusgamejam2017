@@ -27,7 +27,6 @@ public class Boss : Enemy
         var floatImpulse = cols.Count != 0 && cols.OrderBy(x => x.distance).First().distance < FloatImpulseDistance;
         if (floatImpulse)
         {
-            Debug.Log("Impulse boss");
             m_rb2D.AddForce(Vector2.up * Random.value * Speed, ForceMode2D.Impulse);
         }
     }

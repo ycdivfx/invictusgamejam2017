@@ -112,7 +112,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -351,8 +351,8 @@ MonoBehaviour:
   AdjustPhysics: 0.1
   MaxSpeed: 12
   JumpTakeOffSpeed: 11
-  m_health: 400
-  MaxHealth: 400
+  m_health: 100
+  MaxHealth: 100
   EnemyBullets:
     serializedVersion: 2
     m_Bits: 0
