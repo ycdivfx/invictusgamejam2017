@@ -23173,7 +23173,7 @@ MonoBehaviour:
   HPEnemyShield: {fileID: 1860473081}
   Score: 0
   SceneIndex: 0
-  Timeout: 8
+  Timeout: 6
 --- !u!4 &1313311437
 Transform:
   m_ObjectHideFlags: 0

@@ -11824,7 +11824,7 @@ MonoBehaviour:
   HPEnemyShield: {fileID: 1890667510}
   Score: 0
   SceneIndex: 0
-  Timeout: 3
+  Timeout: 6
 --- !u!4 &1313311437
 Transform:
   m_ObjectHideFlags: 0
@@ -14509,7 +14509,7 @@ Prefab:
     - target: {fileID: 114449765938710254, guid: c40df3f240428d544a8c47060d99c705,
         type: 2}
       propertyPath: SpawnTime
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114449765938710254, guid: c40df3f240428d544a8c47060d99c705,
         type: 2}
