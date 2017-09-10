@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,7 @@ public class SoundManager : Singleton<SoundManager>
 
     [Header("Audio Management UI Elements")]
     public AudioSource m_audioSourceSFX;
+    public AudioSource m_audioSourceEnd;
     public Toggle toggleSFX;
     public Slider sliderSFX;
 
@@ -41,6 +43,16 @@ public class SoundManager : Singleton<SoundManager>
         if (sfx)
             m_audioSourceSFX.Play();
     }
+
+    public void PlayEnd(AudioClip clip)
+    {
+        m_audioSourceMusic.DOFade(0.5f, 0.2f);
+        m_audioSourceSFX.DOFade(0.0f, 0.2f);
+        m_audioSourceEnd.clip = clip;
+        if (sfx)
+            m_audioSourceEnd.Play();
+    }
+
     public void PlayMusic(AudioClip clip)
     {
         m_audioSourceMusic.clip = clip;

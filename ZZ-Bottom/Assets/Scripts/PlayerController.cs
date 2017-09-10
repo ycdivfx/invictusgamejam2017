@@ -29,10 +29,18 @@ public class PlayerController : BaseObject
         set
         {
             m_health = value;
+            m_health = Mathf.Min(MaxHealth, m_health);
             if (m_health <= 0)
             {
+                m_spriteRenderer.enabled = false;
+                m_rb2D.simulated = false;
+                GameObject.FindGameObjectsWithTag("enemy").ToList().ForEach(x =>
+                {
+                    x.GetComponent<Enemy>().enabled = false;
+                    x.GetComponent<Rigidbody2D>().simulated = false;
+                });
+                enabled = false;
                 GameManager.Instance.Lost();
-                //GameObject.FindGameObjectsWithTag("enemy").ToList().ForEach(Destroy);
                 //GameObject.FindGameObjectsWithTag("boss").ToList().ForEach(Destroy);
                 //Destroy(gameObject);
             }
@@ -56,14 +64,15 @@ public class PlayerController : BaseObject
             SoundManager.Instance.PlaySfx(SoundManager.Instance.Walk);
         }
 
-        if (Input.GetButtonDown("Jump") && m_grounded)
+        bool jumpKey = Input.GetButtonDown("Jump");
+        if (jumpKey && m_grounded)
         {
             SoundManager.Instance.PlaySfx(SoundManager.Instance.Jump);
             m_velocity.y = JumpTakeOffSpeed;
             m_jumps++;
         }
 
-        if (Input.GetButtonDown("Jump") && !m_grounded && m_jumps < MaxJumps)
+        if (jumpKey && !m_grounded && m_jumps < MaxJumps)
         {
             SoundManager.Instance.PlaySfx(SoundManager.Instance.Jump);
             m_velocity.y += JumpTakeOffSpeed;

@@ -28,13 +28,13 @@ public class GameManager : Singleton<GameManager>
 
     public void Lost()
     {
-        SoundManager.Instance.PlaySfx(SoundManager.Instance.Lose);
+        SoundManager.Instance.PlayEnd(SoundManager.Instance.Lose);
         StartCoroutine(LostRoutine());
     }
 
     public void Win()
     {
-        SoundManager.Instance.PlaySfx(SoundManager.Instance.Win);
+        SoundManager.Instance.PlayEnd(SoundManager.Instance.Win);
         StartCoroutine(WinRoutine());
     }
 
