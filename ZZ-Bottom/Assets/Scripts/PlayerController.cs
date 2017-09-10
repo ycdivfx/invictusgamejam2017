@@ -36,14 +36,19 @@ public class PlayerController : BaseObject
                 m_rb2D.simulated = false;
                 GameObject.FindGameObjectsWithTag("enemy").ToList().ForEach(x =>
                 {
-                    x.GetComponent<Enemy>().enabled = false;
-                    x.GetComponent<Rigidbody2D>().simulated = false;
+                    var enemy = x.GetComponent<Enemy>();
+                    if (enemy)
+                        enemy.enabled = false;
+                    var rg = x.GetComponent<Rigidbody2D>();
+                    if(rg)
+                        x.GetComponent<Rigidbody2D>().simulated = false;
                 });
                 enabled = false;
                 GameManager.Instance.Lost();
                 //GameObject.FindGameObjectsWithTag("boss").ToList().ForEach(Destroy);
                 //Destroy(gameObject);
             }
+            GameManager.Instance.PlayerHP(this);
         }
     }
 
