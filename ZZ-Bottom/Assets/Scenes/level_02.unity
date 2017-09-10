@@ -1179,7 +1179,7 @@ GameObject:
   - component: {fileID: 130618763}
   m_Layer: 9
   m_Name: New Sprite (13)
-  m_TagString: Untagged
+  m_TagString: terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1420,7 +1420,7 @@ GameObject:
   - component: {fileID: 139267536}
   m_Layer: 9
   m_Name: New Sprite (15)
-  m_TagString: Untagged
+  m_TagString: terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1538,7 +1538,7 @@ GameObject:
   - component: {fileID: 147515398}
   m_Layer: 9
   m_Name: New Sprite (9)
-  m_TagString: Untagged
+  m_TagString: terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4653,7 +4653,7 @@ GameObject:
   - component: {fileID: 471726777}
   m_Layer: 9
   m_Name: New Sprite (12)
-  m_TagString: Untagged
+  m_TagString: terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4771,7 +4771,7 @@ GameObject:
   - component: {fileID: 472973990}
   m_Layer: 9
   m_Name: New Sprite (4)
-  m_TagString: Untagged
+  m_TagString: terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7774,7 +7774,7 @@ GameObject:
   - component: {fileID: 872056411}
   m_Layer: 9
   m_Name: New Sprite (6)
-  m_TagString: Untagged
+  m_TagString: terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10252,7 +10252,7 @@ GameObject:
   - component: {fileID: 1205913646}
   m_Layer: 9
   m_Name: New Sprite (10)
-  m_TagString: Untagged
+  m_TagString: terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13383,10 +13383,19 @@ Prefab:
       propertyPath: m_RenderingPath
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1239669677826470, guid: fc1cae64ebfd5a4419f961cb10f784db, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114882723745940532, guid: fc1cae64ebfd5a4419f961cb10f784db, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: fc1cae64ebfd5a4419f961cb10f784db, type: 2}
   m_IsPrefabParent: 0
+--- !u!212 &1538027380 stripped
+SpriteRenderer:
+  m_PrefabParentObject: {fileID: 212891705589136606, guid: fc1cae64ebfd5a4419f961cb10f784db,
+    type: 2}
+  m_PrefabInternal: {fileID: 1538027379}
 --- !u!1 &1541357919
 GameObject:
   m_ObjectHideFlags: 0
@@ -15046,7 +15055,7 @@ GameObject:
   - component: {fileID: 1701567943}
   m_Layer: 9
   m_Name: New Sprite (14)
-  m_TagString: Untagged
+  m_TagString: terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15911,7 +15920,7 @@ GameObject:
   - component: {fileID: 1823462124}
   m_Layer: 9
   m_Name: New Sprite (5)
-  m_TagString: Untagged
+  m_TagString: terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16527,6 +16536,7 @@ GameObject:
   - component: {fileID: 1860473080}
   - component: {fileID: 1860473082}
   - component: {fileID: 1860473081}
+  - component: {fileID: 1860473083}
   m_Layer: 5
   m_Name: shieldhealth
   m_TagString: Untagged
@@ -16586,6 +16596,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1860473079}
+--- !u!225 &1860473083
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1860473079}
+  m_Enabled: 1
+  m_Alpha: 0.03
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1862135771
 GameObject:
   m_ObjectHideFlags: 0
@@ -17158,7 +17179,7 @@ GameObject:
   - component: {fileID: 1922728336}
   m_Layer: 9
   m_Name: New Sprite (7)
-  m_TagString: Untagged
+  m_TagString: terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18455,6 +18476,59 @@ Transform:
   m_Father: {fileID: 1968757616}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2059678133
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4915915943331558, guid: dbaccf31f58c6474699a8b197360da2c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 6.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915915943331558, guid: dbaccf31f58c6474699a8b197360da2c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915915943331558, guid: dbaccf31f58c6474699a8b197360da2c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -15.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915915943331558, guid: dbaccf31f58c6474699a8b197360da2c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915915943331558, guid: dbaccf31f58c6474699a8b197360da2c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915915943331558, guid: dbaccf31f58c6474699a8b197360da2c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915915943331558, guid: dbaccf31f58c6474699a8b197360da2c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915915943331558, guid: dbaccf31f58c6474699a8b197360da2c, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114661381353873080, guid: dbaccf31f58c6474699a8b197360da2c,
+        type: 2}
+      propertyPath: profile
+      value: 
+      objectReference: {fileID: 11400000, guid: e9905259f9e7f1245bb061d8391c427f,
+        type: 2}
+    - target: {fileID: 114642784665540670, guid: dbaccf31f58c6474699a8b197360da2c,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1538027380}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: dbaccf31f58c6474699a8b197360da2c, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &2065914462
 Prefab:
   m_ObjectHideFlags: 0
@@ -18637,7 +18711,7 @@ GameObject:
   - component: {fileID: 2071032810}
   m_Layer: 9
   m_Name: New Sprite (8)
-  m_TagString: Untagged
+  m_TagString: terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19075,7 +19149,7 @@ GameObject:
   - component: {fileID: 2094970761}
   m_Layer: 9
   m_Name: New Sprite (11)
-  m_TagString: Untagged
+  m_TagString: terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

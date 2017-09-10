@@ -141,6 +141,8 @@ MonoBehaviour:
   MinGroundNormalY: 0.65
   GravityModifier: 1
   MaxJumps: 2
+  NormalJumps: 0
+  AdjustPhysics: 0.1
   Multipliers:
     Normal: 1
     Gold: 4
@@ -154,7 +156,7 @@ MonoBehaviour:
     m_Bits: 4096
   Type: 0
   Speed: 0.5
-  RandomJumps: 0
+  RandomJumps: 1
   JumpProbability: 0.318
   JumpEvery: 15
   JumpForce: {x: 3, y: 8}
