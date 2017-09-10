@@ -12,14 +12,14 @@ public class GameManager : Singleton<GameManager>
     public Image HPEnemy;
     public int Score;
 
-    public void PlayerHP(float currentHP)
+    public void PlayerHP(PlayerController player)
     {
-        HPPlayer.fillAmount = currentHP / 100;
+        HPPlayer.fillAmount = player.Health / player.MaxHealth;
     }
 
-    public void EnemyHP(float currentHP)
+    public void EnemyHP(Enemy enemy)
     {
-        HPEnemy.fillAmount = currentHP / 100;
+        HPEnemy.fillAmount = enemy.Health / enemy.MaxHealth;
     }
 
     public void Lost()

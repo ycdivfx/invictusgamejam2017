@@ -9,6 +9,9 @@ public class Enemy : BaseObject
     public DamageMultiplier Multipliers;
     [SerializeField]
     private float m_health = 5;
+
+    public float MaxHealth = 5;
+
     public float Speed;
     public LayerMask PlayerBullets;
     public float TimeoutBeforeRemove = 2f;
@@ -54,6 +57,7 @@ public class Enemy : BaseObject
     {
         m_bulletsFilter.SetLayerMask(PlayerBullets);
         m_bulletsFilter.useLayerMask = true;
+        Health = MaxHealth;
     }
 
     protected override void OnFixedUpdate()

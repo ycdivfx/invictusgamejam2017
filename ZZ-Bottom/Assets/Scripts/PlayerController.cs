@@ -11,6 +11,9 @@ public class PlayerController : BaseObject
     public float JumpTakeOffSpeed = 7;
     [SerializeField]
     private float m_health = 400f;
+
+    public float MaxHealth = 400f;
+
     public LayerMask EnemyBullets;
     public Vector2 DebugVelocity;
 
@@ -75,6 +78,7 @@ public class PlayerController : BaseObject
         m_bulletsFilter.SetLayerMask(EnemyBullets);
         m_bulletsFilter.useLayerMask = true;
         m_playerWeapon = GetComponent<PlayerWeapon>();
+        Health = MaxHealth;
     }
 
     protected override void OnFixedUpdate()
@@ -97,7 +101,7 @@ public class PlayerController : BaseObject
             enemy.GetComponent<Rigidbody2D>().AddForce(new Vector2(12, 5), ForceMode2D.Impulse);
             Health -= 10;
             enemy.GetComponent<Enemy>().Health -= 2;
-            GameManager.Instance.PlayerHP(Health);
+            GameManager.Instance.PlayerHP(this);
 
         }
     }

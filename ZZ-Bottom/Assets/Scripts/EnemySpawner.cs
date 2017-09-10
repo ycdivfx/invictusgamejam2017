@@ -32,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
     private void Update()
     {
         var pt = Camera.main.WorldToViewportPoint(transform.position);
-        Active = pt.x > 1 + OffscreenBuffer && transform.position.x - m_player.transform.position.x <= PlayerDistance;
+        Active = (pt.x > 1 + OffscreenBuffer || pt.x < 0 - OffscreenBuffer)  && transform.position.x - m_player.transform.position.x <= PlayerDistance;
 
         if(Enemies.Count == 0 || !Active) return;
         var deltaTime = Time.time - m_lastSpawn;

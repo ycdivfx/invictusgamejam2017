@@ -39,6 +39,6 @@ public class BaseBullet : MonoBehaviour
     public void DoPlayer(PlayerController player)
     {
         player.Health -= Damage;
-        GameManager.Instance.PlayerHP(player.Health);
+        GameManager.Instance.PlayerHP(player);
     }
 }
